@@ -9,6 +9,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
+          // CUSTOMIZE: Replace this URL with your own engagement photo
           backgroundImage: 'url(https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
         }}
       >
@@ -19,20 +20,24 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <div className="animate-fade-in">
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-wide">
-            Sarah <span className="text-rose-300">&</span> John
+            {/* CUSTOMIZE: Replace with couple's names */}
+            Partner 1 <span className="text-rose-300">&</span> Partner 2
           </h1>
           <p className="text-xl md:text-2xl font-light mb-8 opacity-90">
+            {/* CUSTOMIZE: Replace with your wedding tagline */}
             Together with our families, we invite you to celebrate our love
           </p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
             <div className="flex items-center gap-3 text-lg">
               <Calendar className="w-6 h-6 text-rose-300" />
-              <span>June 15, 2024</span>
+              {/* CUSTOMIZE: Replace with your wedding date */}
+              <span>Month Day, Year</span>
             </div>
             <div className="flex items-center gap-3 text-lg">
               <MapPin className="w-6 h-6 text-rose-300" />
-              <span>Sunset Gardens, Napa Valley</span>
+              {/* CUSTOMIZE: Replace with your venue name and location */}
+              <span>Venue Name, City</span>
             </div>
           </div>
 

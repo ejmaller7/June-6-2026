@@ -58,8 +58,9 @@ const RSVP = () => {
             RSVP
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            {/* CUSTOMIZE: Replace with your RSVP introduction */}
             We're so excited to celebrate with you! Please let us know if you'll be joining us 
-            for our special day by Friday, May 15th, 2024.
+            for our special day by [RSVP Deadline Date].
           </p>
         </div>
       </div>
@@ -147,6 +148,7 @@ const RSVP = () => {
                       onChange={(e) => handleInputChange('guests', e.target.value)}
                       className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-rose-500 focus:outline-none focus:ring-rose-500"
                     >
+                      {/* CUSTOMIZE: Adjust the number of guests allowed */}
                       {[1, 2, 3, 4].map(num => (
                         <option key={num} value={num}>{num}</option>
                       ))}
@@ -225,15 +227,17 @@ const RSVP = () => {
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">RSVP Deadline</h3>
                 <p className="text-gray-600">
-                  Please respond by Friday, May 15th, 2024 so we can finalize our headcount 
+                  {/* CUSTOMIZE: Replace with your RSVP deadline */}
+                  Please respond by [RSVP Deadline Date] so we can finalize our headcount 
                   with the caterer and venue.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">Questions?</h3>
                 <p className="text-gray-600">
+                  {/* CUSTOMIZE: Replace with your contact information */}
                   If you have any questions about the wedding or need to make changes to your RSVP, 
-                  please contact us at sarah.john.wedding@email.com
+                  please contact us at [your email or phone].
                 </p>
               </div>
             </div>

@@ -3,26 +3,27 @@ import React from 'react';
 import { Calendar, Clock, MapPin, Users } from 'lucide-react';
 
 const QuickDetails = () => {
+  // CUSTOMIZE: Replace with your wedding details
   const details = [
     {
       icon: Calendar,
       title: 'Wedding Date',
-      info: 'Saturday, June 15, 2024',
+      info: 'Month Day, Year', // Replace with your wedding date
     },
     {
       icon: Clock,
       title: 'Ceremony Time',
-      info: '4:00 PM',
+      info: 'Time', // Replace with your ceremony time
     },
     {
       icon: MapPin,
       title: 'Venue',
-      info: 'Sunset Gardens, Napa Valley',
+      info: 'Venue Name, Location', // Replace with your venue name and location
     },
     {
       icon: Users,
       title: 'Dress Code',
-      info: 'Garden Party Attire',
+      info: 'Dress Code', // Replace with your dress code
     },
   ];
 
@@ -34,6 +35,7 @@ const QuickDetails = () => {
             Wedding Details
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            {/* CUSTOMIZE: Replace with your details intro text */}
             Here are the essential details for our special day. We can't wait to celebrate with you!
           </p>
         </div>

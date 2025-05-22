@@ -10,6 +10,7 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
+    // CUSTOMIZE: Replace with your wedding date and time in format 'YYYY-MM-DDTHH:MM:SS'
     const weddingDate = new Date('2024-06-15T16:00:00').getTime();
 
     const timer = setInterval(() => {
@@ -33,6 +34,7 @@ const CountdownTimer = () => {
     <div className="bg-gradient-to-r from-rose-50 to-pink-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-8">
+          {/* CUSTOMIZE: Replace with your countdown heading */}
           Counting Down to Our Big Day
         </h2>
         

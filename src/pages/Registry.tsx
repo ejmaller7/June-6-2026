@@ -16,96 +16,31 @@ interface RegistryItem {
 }
 
 const Registry = () => {
+  // CUSTOMIZE: Replace with your actual registry items
   const [registryItems] = useState<RegistryItem[]>([
+    // Example item format - replace all with your actual items
     {
       id: '1',
-      name: 'Professional Stand Mixer',
-      price: 299.99,
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      store: 'Williams Sonoma',
-      storeUrl: 'https://williams-sonoma.com',
-      quantity: 1,
-      purchased: 0,
-      description: 'Perfect for all our baking adventures together',
+      name: 'Item Name', // Replace with actual item name
+      price: 99.99, // Replace with actual price
+      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Replace with actual image
+      store: 'Store Name', // Replace with actual store
+      storeUrl: 'https://store-website.com', // Replace with actual store URL
+      quantity: 1, // How many of this item you want
+      purchased: 0, // How many have been purchased (start with 0)
+      description: 'Item description', // Replace with actual description
     },
-    {
-      id: '2',
-      name: 'Egyptian Cotton Sheet Set',
-      price: 179.99,
-      image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      store: 'Pottery Barn',
-      storeUrl: 'https://potterybarn.com',
-      quantity: 1,
-      purchased: 1,
-      description: 'Luxurious sheets for our master bedroom',
-    },
-    {
-      id: '3',
-      name: 'Cast Iron Dutch Oven',
-      price: 149.99,
-      image: 'https://images.unsplash.com/photo-1556909144-f5419188e6d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      store: 'Sur La Table',
-      storeUrl: 'https://surlatable.com',
-      quantity: 1,
-      purchased: 0,
-      description: 'For cozy home-cooked meals',
-    },
-    {
-      id: '4',
-      name: 'Fine China Dinner Set',
-      price: 499.99,
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      store: 'Crate & Barrel',
-      storeUrl: 'https://crateandbarrel.com',
-      quantity: 1,
-      purchased: 0,
-      description: 'Elegant dinnerware for special occasions',
-    },
-    {
-      id: '5',
-      name: 'Coffee Maker with Grinder',
-      price: 199.99,
-      image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      store: 'Williams Sonoma',
-      storeUrl: 'https://williams-sonoma.com',
-      quantity: 1,
-      purchased: 0,
-      description: 'For our morning coffee rituals',
-    },
-    {
-      id: '6',
-      name: 'Luxury Towel Set',
-      price: 89.99,
-      image: 'https://images.unsplash.com/photo-1584622650481-12df8b1ccfa0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      store: 'Pottery Barn',
-      storeUrl: 'https://potterybarn.com',
-      quantity: 2,
-      purchased: 1,
-      description: 'Soft, plush towels for our bathroom',
-    },
+    // Add more items following the same format
   ]);
 
+  // CUSTOMIZE: Replace with your actual registry stores
   const stores = [
     {
-      name: 'Williams Sonoma',
-      url: 'https://williams-sonoma.com',
-      logo: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      name: 'Store 1', // Replace with actual store name
+      url: 'https://store1.com', // Replace with actual store URL
+      logo: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80', // Replace with actual logo
     },
-    {
-      name: 'Pottery Barn',
-      url: 'https://potterybarn.com',
-      logo: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-    },
-    {
-      name: 'Crate & Barrel',
-      url: 'https://crateandbarrel.com',
-      logo: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-    },
-    {
-      name: 'Sur La Table',
-      url: 'https://surlatable.com',
-      logo: 'https://images.unsplash.com/photo-1556909144-f5419188e6d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-    },
+    // Add more stores following the same format
   ];
 
   const isPurchased = (item: RegistryItem) => item.purchased >= item.quantity;
@@ -122,6 +57,7 @@ const Registry = () => {
             Wedding Registry
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            {/* CUSTOMIZE: Replace with your registry introduction */}
             Your presence at our wedding is the greatest gift of all. If you wish to honor us 
             with a gift, we've curated a selection of items that will help us build our new home together.
           </p>
@@ -241,6 +177,7 @@ const Registry = () => {
             Thank You
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
+            {/* CUSTOMIZE: Replace with your thank you message */}
             Your love, support, and presence mean the world to us. Any gift you choose to give 
             will be cherished as we start this new chapter of our lives together. We're grateful 
             for each and every one of you who will be celebrating with us on our special day.

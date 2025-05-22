@@ -17,9 +17,11 @@ const Index = () => {
       <div className="py-16 bg-gradient-to-r from-rose-600 to-pink-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-serif mb-6">
+            {/* CUSTOMIZE: Replace with your CTA heading */}
             We Can't Wait to Celebrate With You!
           </h2>
           <p className="text-xl mb-8 opacity-90">
+            {/* CUSTOMIZE: Replace with your CTA text */}
             Join us for an unforgettable day filled with love, laughter, and happily ever after.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -43,11 +45,18 @@ const Index = () => {
       <footer className="bg-gray-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-6">
-            <h3 className="text-2xl font-serif mb-2">Sarah & John</h3>
-            <p className="text-gray-400">June 15, 2024 • Sunset Gardens, Napa Valley</p>
+            <h3 className="text-2xl font-serif mb-2">
+              {/* CUSTOMIZE: Replace with couple's names */}
+              Partner 1 & Partner 2
+            </h3>
+            <p className="text-gray-400">
+              {/* CUSTOMIZE: Replace with your wedding date and location */}
+              Month Day, Year • Venue Name, Location
+            </p>
           </div>
           <div className="border-t border-gray-700 pt-6">
             <p className="text-gray-400 text-sm">
+              {/* CUSTOMIZE: Replace with your footer message */}
               Made with ❤️ for our special day
             </p>
           </div>

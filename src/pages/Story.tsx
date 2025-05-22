@@ -3,30 +3,31 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 
 const Story = () => {
+  // CUSTOMIZE: Replace with your own story timeline events
   const timeline = [
     {
-      year: '2018',
+      year: '20XX', // Replace with actual year
       title: 'First Meeting',
-      description: 'We met at a coffee shop on a rainy Tuesday morning. John spilled coffee on Sarah\'s laptop, and the rest is history!',
-      image: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Describe how you first met', // Replace with your story
+      image: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Replace with your photo
     },
     {
-      year: '2019',
+      year: '20XX', // Replace with actual year
       title: 'First Date',
-      description: 'Our first official date was at the local farmer\'s market, followed by a picnic in the park.',
-      image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Describe your first date', // Replace with your story
+      image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Replace with your photo
     },
     {
-      year: '2021',
+      year: '20XX', // Replace with actual year
       title: 'Moving In Together',
-      description: 'We took the big step and moved into our first apartment together in downtown.',
-      image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Describe this milestone', // Replace with your story
+      image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Replace with your photo
     },
     {
-      year: '2023',
+      year: '20XX', // Replace with actual year
       title: 'The Proposal',
-      description: 'John proposed during a sunset hike at our favorite trail, with a ring hidden in the picnic basket.',
-      image: 'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Describe the proposal', // Replace with your story
+      image: 'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Replace with your photo
     },
   ];
 
@@ -41,6 +42,7 @@ const Story = () => {
             Our Love Story
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            {/* CUSTOMIZE: Replace with your story introduction */}
             Every love story is beautiful, but ours is our favorite. From a chance encounter 
             to forever together, here's how our journey began and where it's leading us.
           </p>
@@ -88,12 +90,16 @@ const Story = () => {
               Engagement Photos
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {/* CUSTOMIZE: Replace with your engagement photos description */}
               A glimpse into our engagement photo session, capturing the joy and excitement 
               of this special chapter in our lives.
             </p>
           </div>
           
+          {/* CUSTOMIZE: Replace these placeholders with your actual photos */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Example of how to add your engagement photos */}
+            {/* Replace the URLs with your actual photo URLs */}
             {Array.from({ length: 6 }).map((_, index) => (
               <div key={index} className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <img 
