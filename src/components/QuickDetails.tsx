@@ -8,22 +8,22 @@ const QuickDetails = () => {
     {
       icon: Calendar,
       title: 'Wedding Date',
-      info: 'Month Day, Year', // Replace with your wedding date
+      info: 'June 6, 2026', // Replace with your wedding date
     },
     {
       icon: Clock,
       title: 'Ceremony Time',
-      info: 'Time', // Replace with your ceremony time
+      info: '6:30', // Replace with your ceremony time
     },
     {
       icon: MapPin,
       title: 'Venue',
-      info: 'Venue Name, Location', // Replace with your venue name and location
+      info: 'Stonehaven at the Mill in New Braunfels, TX', // Replace with your venue name and location
     },
     {
       icon: Users,
       title: 'Dress Code',
-      info: 'Dress Code', // Replace with your dress code
+      info: 'Black Tie Optional', // Replace with your dress code
     },
   ];
 
@@ -36,7 +36,7 @@ const QuickDetails = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {/* CUSTOMIZE: Replace with your details intro text */}
-            Here are the essential details for our special day. We can't wait to celebrate with you!
+            Here are all of the essential details for our special day. We can't wait to celebrate with you!
           </p>
         </div>
 

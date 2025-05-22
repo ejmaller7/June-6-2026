@@ -47,11 +47,11 @@ const Index = () => {
           <div className="mb-6">
             <h3 className="text-2xl font-serif mb-2">
               {/* CUSTOMIZE: Replace with couple's names */}
-              Partner 1 & Partner 2
+              Ethan & Marlena
             </h3>
             <p className="text-gray-400">
               {/* CUSTOMIZE: Replace with your wedding date and location */}
-              Month Day, Year • Venue Name, Location
+              June 6, 2026 • Stonehave at the Mill, New Braunfels, TX
             </p>
           </div>
           <div className="border-t border-gray-700 pt-6">

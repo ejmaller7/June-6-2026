@@ -21,23 +21,23 @@ const Hero = () => {
         <div className="animate-fade-in">
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-wide">
             {/* CUSTOMIZE: Replace with couple's names */}
-            Partner 1 <span className="text-rose-300">&</span> Partner 2
+            Ethan <span className="text-rose-300">&</span> Marlena
           </h1>
           <p className="text-xl md:text-2xl font-light mb-8 opacity-90">
             {/* CUSTOMIZE: Replace with your wedding tagline */}
-            Together with our families, we invite you to celebrate our love
+            All friends and family, we invite you to celebrate with us on our big day!
           </p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
             <div className="flex items-center gap-3 text-lg">
               <Calendar className="w-6 h-6 text-rose-300" />
               {/* CUSTOMIZE: Replace with your wedding date */}
-              <span>Month Day, Year</span>
+              <span>June 6, 2026</span>
             </div>
             <div className="flex items-center gap-3 text-lg">
               <MapPin className="w-6 h-6 text-rose-300" />
               {/* CUSTOMIZE: Replace with your venue name and location */}
-              <span>Venue Name, City</span>
+              <span>Stonehaven at the Mill, New Braunfels</span>
             </div>
           </div>
 
