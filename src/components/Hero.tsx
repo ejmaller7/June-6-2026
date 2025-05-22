@@ -1,0 +1,66 @@
+
+import React from 'react';
+import { Calendar, MapPin } from 'lucide-react';
+
+const Hero = () => {
+  return (
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="animate-fade-in">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-wide">
+            Sarah <span className="text-rose-300">&</span> John
+          </h1>
+          <p className="text-xl md:text-2xl font-light mb-8 opacity-90">
+            Together with our families, we invite you to celebrate our love
+          </p>
+          
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
+            <div className="flex items-center gap-3 text-lg">
+              <Calendar className="w-6 h-6 text-rose-300" />
+              <span>June 15, 2024</span>
+            </div>
+            <div className="flex items-center gap-3 text-lg">
+              <MapPin className="w-6 h-6 text-rose-300" />
+              <span>Sunset Gardens, Napa Valley</span>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/rsvp"
+              className="bg-rose-600 hover:bg-rose-700 text-white px-8 py-3 rounded-full font-medium transition-colors duration-200 hover:scale-105 transform"
+            >
+              RSVP Now
+            </a>
+            <a
+              href="/registry"
+              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30 px-8 py-3 rounded-full font-medium transition-all duration-200 hover:scale-105 transform"
+            >
+              View Registry
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

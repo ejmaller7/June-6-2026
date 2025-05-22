@@ -1,0 +1,60 @@
+
+import React from 'react';
+import { Calendar, Clock, MapPin, Users } from 'lucide-react';
+
+const QuickDetails = () => {
+  const details = [
+    {
+      icon: Calendar,
+      title: 'Wedding Date',
+      info: 'Saturday, June 15, 2024',
+    },
+    {
+      icon: Clock,
+      title: 'Ceremony Time',
+      info: '4:00 PM',
+    },
+    {
+      icon: MapPin,
+      title: 'Venue',
+      info: 'Sunset Gardens, Napa Valley',
+    },
+    {
+      icon: Users,
+      title: 'Dress Code',
+      info: 'Garden Party Attire',
+    },
+  ];
+
+  return (
+    <div className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-4">
+            Wedding Details
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Here are the essential details for our special day. We can't wait to celebrate with you!
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {details.map((detail, index) => (
+            <div
+              key={index}
+              className="text-center p-6 rounded-xl bg-gradient-to-br from-rose-50 to-pink-50 hover:shadow-lg transition-shadow duration-200"
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-rose-100 rounded-full mb-4">
+                <detail.icon className="w-8 h-8 text-rose-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">{detail.title}</h3>
+              <p className="text-gray-600">{detail.info}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default QuickDetails;
