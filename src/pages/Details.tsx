@@ -16,7 +16,7 @@ const Details = () => {
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             {/* CUSTOMIZE: Replace with your wedding details introduction */}
-            {/* Example: We're excited to share all the details for our special day. Please read through the information below to help plan your attendance. */}
+            We're excited to share all the details you need for our special day. Please read through the information below to help plan your attendance.
           </p>
         </div>
       </div>
@@ -30,7 +30,7 @@ const Details = () => {
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               {/* CUSTOMIZE: Add a brief intro about your schedule */}
-              {/* Example: Here's what to expect on our wedding day. */}
+              Here is a rough time frame of what to expect on the day of our wedding.
             </p>
           </div>
 
@@ -44,19 +44,51 @@ const Details = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">
                     {/* CUSTOMIZE: Event name */}
-                    {/* Example: Ceremony */}
+                    Ceremony
                   </h3>
                   <p className="text-gray-600 mb-2">
                     {/* CUSTOMIZE: Time */}
-                    {/* Example: 4:00 PM - 5:00 PM */}
+                    6:00 PM - 6:30 PM
                   </p>
                   <p className="text-gray-600 mb-4">
                     {/* CUSTOMIZE: Location */}
-                    {/* Example: Garden Terrace */}
+                    Cocktail Hour
                   </p>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 mb-2">
                     {/* CUSTOMIZE: Description */}
-                    {/* Example: Join us as we exchange vows in the beautiful garden terrace overlooking the lake. */}
+                    6:30 PM - 7:30 PM
+                  </p>
+                  <p className="text-gray-600 mb-4">
+                    {/* CUSTOMIZE: Description */}
+                    Introduction of Bridal Party & Newlyweds
+                  </p>
+                  <p className="text-gray-600 mb-2">
+                    {/* CUSTOMIZE: Description */}
+                    7:30 PM - 7:40 PM
+                  </p>
+                  <p className="text-gray-600 mb-4">
+                    {/* CUSTOMIZE: Description */}
+                    Dinner
+                  </p>
+                  <p className="text-gray-600 mb-2">
+                    {/* CUSTOMIZE: Description */}
+                    7:45 PM - 8:30 PM
+                  </p>
+                  <p className="text-gray-600 mb-4">
+                    {/* CUSTOMIZE: Description */}
+                    First Dance
+                  </p>
+                  <p className="text-gray-600 mb-2">
+                    {/* CUSTOMIZE: Description */}
+                    8:30 PM
+                  </p>
+                     <p className="text-gray-600 mb-4">
+                    {/* CUSTOMIZE: Description */}
+                    Dancing until Dawn
+                  </p>
+                  <p className="text-gray-600 mb-2">
+                    {/* CUSTOMIZE: Description */}
+                    8:30 PM - 11:00 PM
                   </p>
                 </div>
               </div>
@@ -90,7 +122,7 @@ const Details = () => {
               <div className="p-8 md:w-1/2">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                   {/* CUSTOMIZE: Replace with your venue name */}
-                  {/* Example: Stonehaven at the Mill */}
+                  Stonehaven at the Milestone
                 </h3>
                 
                 <div className="flex items-start gap-3 mb-4">
@@ -99,7 +131,7 @@ const Details = () => {
                     <p className="font-medium">Address:</p>
                     <p className="text-gray-600">
                       {/* CUSTOMIZE: Replace with your venue address */}
-                      {/* Example: 123 Wedding Lane, New Braunfels, TX 78130 */}
+                      1723 Herbelin Rd, New Braunfels, TX 78132
                     </p>
                   </div>
                 </div>
@@ -110,7 +142,7 @@ const Details = () => {
                     <p className="font-medium">Parking Information:</p>
                     <p className="text-gray-600">
                       {/* CUSTOMIZE: Add parking details */}
-                      {/* Example: Complimentary valet parking will be available. Self-parking is also available in the main lot. */}
+                      Self-parking available on gravel. Parking in the first lot when you pull in to the venue on the right hand sand.
                     </p>
                   </div>
                 </div>
@@ -118,7 +150,7 @@ const Details = () => {
                 <div className="mb-6">
                   <p className="text-gray-700">
                     {/* CUSTOMIZE: Add venue description or additional information */}
-                    {/* Example: Our venue features stunning views of the river and beautiful indoor and outdoor spaces for the ceremony and reception. */}
+                    Our venue features stunning views of the beautiful indoor and outdoor spaces for the ceremony and reception.
                   </p>
                 </div>
                 
@@ -149,7 +181,7 @@ const Details = () => {
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               {/* CUSTOMIZE: Add accommodations intro */}
-              {/* Example: We've reserved room blocks at the following hotels for your convenience. */}
+              We've reserved a room at the JW Marriott for our wedding night, and anyone wanting to stay at the hotel as well is welcome to stay.
             </p>
           </div>
           
@@ -169,20 +201,20 @@ const Details = () => {
                   <Hotel className="w-5 h-5 text-rose-600 mr-2" />
                   <h3 className="text-xl font-semibold text-gray-800">
                     {/* CUSTOMIZE: Hotel name */}
-                    {/* Example: Riverside Hotel & Spa */}
+                    JW Marriott
                   </h3>
                 </div>
                 <p className="text-gray-600 mb-4">
                   {/* CUSTOMIZE: Hotel description, address, and details */}
-                  {/* Example: Located just 5 minutes from the venue. Special group rate available until [date]. */}
+                  Located 30 minutes from the venue. This is one of the nicest hotels in San Antonio.
                 </p>
                 <div className="flex justify-between items-center">
                   <span className="text-rose-600 font-medium">
                     {/* CUSTOMIZE: Room rate */}
-                    {/* Example: $189/night */}
+                    $400/night
                   </span>
                   <a 
-                    href="#" 
+                    href="https://www.marriott.com/search/availabilityCalendar.mi?isRateCalendar=true&propertyCode=SATJW&isSearch=true&currency=&costTab=average#/0/" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-full transition-colors"
@@ -215,7 +247,7 @@ const Details = () => {
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">By Air</h3>
                 <p className="text-gray-600">
                   {/* CUSTOMIZE: Airport information */}
-                  {/* Example: The nearest airport is Austin-Bergstrom International Airport (AUS), approximately 45 minutes from the venue. */}
+                  The nearest airport is the San Antonio Airport, which is approximately 40 minutes from the venue, and 30 minutes from the hotel.
                 </p>
               </div>
               
@@ -223,7 +255,7 @@ const Details = () => {
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">By Car</h3>
                 <p className="text-gray-600">
                   {/* CUSTOMIZE: Driving directions */}
-                  {/* Example: From Interstate 35, take exit 185 and follow the signs for... */}
+                  From Highway 281, 
                 </p>
               </div>
               
@@ -231,7 +263,7 @@ const Details = () => {
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">Transportation</h3>
                 <p className="text-gray-600">
                   {/* CUSTOMIZE: Transportation options */}
-                  {/* Example: Shuttle service will be provided from the recommended hotels to the venue and back. */}
+                  Shuttle service will be provided from the recommended hotel to the venue and back.
                 </p>
               </div>
             </div>

@@ -37,7 +37,7 @@ const Hero = () => {
             <div className="flex items-center gap-3 text-lg">
               <MapPin className="w-6 h-6 text-rose-300" />
               {/* CUSTOMIZE: Replace with your venue name and location */}
-              <span>Stonehaven at the Mill, New Braunfels</span>
+              <span>Stonehaven at the Mill, New Braunfels, TX</span>
             </div>
           </div>
 

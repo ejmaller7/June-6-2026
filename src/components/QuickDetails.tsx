@@ -18,7 +18,7 @@ const QuickDetails = () => {
     {
       icon: MapPin,
       title: 'Venue',
-      info: 'Stonehaven at the Mill in New Braunfels, TX', // Replace with your venue name and location
+      info: 'Stonehaven at the Milestone in New Braunfels, TX', // Replace with your venue name and location
     },
     {
       icon: Users,
