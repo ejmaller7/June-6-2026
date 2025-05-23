@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="animate-fade-in">
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-wide">
             {/* CUSTOMIZE: Replace with couple's names */}
-            Ethan <span className="text-rose-300">&</span> Marlena
+            Ethan <span className="text-pale-blue">&</span> Marlena
           </h1>
           <p className="text-xl md:text-2xl font-light mb-8 opacity-90">
             {/* CUSTOMIZE: Replace with your wedding tagline */}
@@ -30,12 +30,12 @@ const Hero = () => {
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
             <div className="flex items-center gap-3 text-lg">
-              <Calendar className="w-6 h-6 text-rose-300" />
+              <Calendar className="w-6 h-6 text-pale-blue" />
               {/* CUSTOMIZE: Replace with your wedding date */}
               <span>June 6, 2026</span>
             </div>
             <div className="flex items-center gap-3 text-lg">
-              <MapPin className="w-6 h-6 text-rose-300" />
+              <MapPin className="w-6 h-6 text-pale-blue" />
               {/* CUSTOMIZE: Replace with your venue name and location */}
               <span>Stonehaven at the Mill, New Braunfels, TX</span>
             </div>
@@ -44,7 +44,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/rsvp"
-              className="bg-rose-600 hover:bg-rose-700 text-white px-8 py-3 rounded-full font-medium transition-colors duration-200 hover:scale-105 transform"
+              className="bg-pale-yellow hover:bg-white text-black px-8 py-3 rounded-full font-medium transition-colors duration-200 hover:scale-105 transform"
             >
               RSVP Now
             </a>

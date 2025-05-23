@@ -46,7 +46,7 @@ const QuickDetails = () => {
               key={index}
               className="text-center p-6 rounded-xl bg-white border border-pale-yellow hover:shadow-lg transition-shadow duration-200"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-pale-blue rounded-full mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-pale-yellow rounded-full mb-4">
                 <detail.icon className="w-8 h-8 text-black" />
               </div>
               <h3 className="text-lg font-semibold text-black mb-2">{detail.title}</h3>

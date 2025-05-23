@@ -81,7 +81,7 @@ const Gallery = () => {
               {images.map((image) => (
                 <div 
                   key={image.id}
-                  className="aspect-[3/4] overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+                  className="aspect-[3/4] overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer border border-pale-yellow"
                   onClick={() => openLightbox(image)}
                 >
                   <img 
@@ -134,22 +134,22 @@ const Gallery = () => {
           <h2 className="text-3xl font-serif text-black mb-6">
             Add Your Photos
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-xl shadow-lg p-8 border border-pale-yellow">
             <p className="text-lg text-black mb-6">
               {/* CUSTOMIZE: Instructions for adding photos */}
               To add your engagement photos to the gallery, you'll need to:
             </p>
             <ol className="text-left space-y-4 text-black max-w-lg mx-auto">
               <li className="flex items-start">
-                <span className="bg-pale-blue rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">1</span>
+                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">1</span>
                 <span>Upload your images to the public folder in the project</span>
               </li>
               <li className="flex items-start">
-                <span className="bg-pale-blue rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">2</span>
+                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">2</span>
                 <span>Edit this file (Gallery.tsx) to include your images in the images array</span>
               </li>
               <li className="flex items-start">
-                <span className="bg-pale-blue rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">3</span>
+                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">3</span>
                 <span>For each image, include a unique ID, the path to the image, alt text, and the original dimensions</span>
               </li>
             </ol>

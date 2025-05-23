@@ -54,16 +54,16 @@ const Story = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-pale-blue h-full"></div>
+            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-pale-yellow h-full"></div>
             
             {timeline.map((event, index) => (
               <div key={index} className={`relative flex items-center mb-16 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-yellow rounded-full border-4 border-white shadow-lg z-10"></div>
+                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-blue rounded-full border-4 border-white shadow-lg z-10"></div>
                 
                 {/* Content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-8 pl-12' : 'md:pl-8 pl-12'}`}>
-                  <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-pale-yellow">
                     <img 
                       src={event.image} 
                       alt={event.title}
@@ -83,7 +83,7 @@ const Story = () => {
       </div>
 
       {/* Engagement Photos Section */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-pale-yellow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-black mb-4">
@@ -101,7 +101,7 @@ const Story = () => {
             {/* Example of how to add your engagement photos */}
             {/* Replace the URLs with your actual photo URLs */}
             {Array.from({ length: 6 }).map((_, index) => (
-              <div key={index} className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div key={index} className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-yellow">
                 <img 
                   src={`https://images.unsplash.com/photo-${1519741497674 + index}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`}
                   alt={`Engagement photo ${index + 1}`}

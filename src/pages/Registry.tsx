@@ -88,7 +88,7 @@ const Registry = () => {
       </div>
 
       {/* Registry Stores */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-pale-yellow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-serif text-center text-black mb-12">
             Where We're Registered
@@ -109,7 +109,7 @@ const Registry = () => {
                   rel="noopener noreferrer"
                   className="group bg-white border border-pale-yellow rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden bg-pale-blue">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden bg-pale-yellow">
                     <img 
                       src={store.logo} 
                       alt={store.name}
@@ -128,7 +128,7 @@ const Registry = () => {
       </div>
 
       {/* Registry Items */}
-      <div className="py-16">
+      <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-serif text-center text-black mb-12">
             Our Wish List
@@ -186,7 +186,7 @@ const Registry = () => {
                         {item.store}
                       </span>
                       {isPurchased(item) ? (
-                        <span className="bg-pale-blue text-black px-3 py-1 rounded-full text-sm font-medium">
+                        <span className="bg-pale-yellow text-black px-3 py-1 rounded-full text-sm font-medium">
                           Purchased ✓
                         </span>
                       ) : (
@@ -215,25 +215,25 @@ const Registry = () => {
           <h2 className="text-3xl font-serif text-black mb-6">
             Instructions for Adding Registry Items
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-8 text-left mb-12">
+          <div className="bg-white rounded-xl shadow-lg p-8 text-left mb-12 border border-pale-yellow">
             <p className="text-lg text-black mb-6">
               To add items to your registry:
             </p>
             <ol className="space-y-4 text-black">
               <li className="flex items-start">
-                <span className="bg-pale-blue rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">1</span>
+                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">1</span>
                 <span>Upload product images to the public/images folder (create it if it doesn't exist)</span>
               </li>
               <li className="flex items-start">
-                <span className="bg-pale-blue rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">2</span>
+                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">2</span>
                 <span>Add the item to the registryItems array in the Registry.tsx file</span>
               </li>
               <li className="flex items-start">
-                <span className="bg-pale-blue rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">3</span>
+                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">3</span>
                 <span>Include all required fields: id, name, price, image, store, storeUrl, quantity, purchased, description</span>
               </li>
               <li className="flex items-start">
-                <span className="bg-pale-blue rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">4</span>
+                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">4</span>
                 <span>Set the "purchased" field to 0 initially, and update it when items are purchased</span>
               </li>
             </ol>

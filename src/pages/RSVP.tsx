@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { Button } from '@/components/ui/button';
@@ -152,7 +153,7 @@ const RSVP = () => {
                       id="guests"
                       value={formData.guests}
                       onChange={(e) => handleInputChange('guests', e.target.value)}
-                      className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-rose-500 focus:outline-none focus:ring-rose-500"
+                      className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-pale-yellow focus:outline-none focus:ring-pale-blue"
                     >
                       {/* CUSTOMIZE: Adjust the number of guests allowed */}
                       {[1, 2, 3, 4].map(num => (
@@ -270,7 +271,7 @@ const RSVP = () => {
             <h2 className="text-3xl font-serif text-black mb-6">
               Email Integration Instructions
             </h2>
-            <div className="bg-white rounded-lg p-6 shadow-md text-left">
+            <div className="bg-white rounded-lg p-6 shadow-md text-left border border-pale-yellow">
               <p className="text-black mb-4">
                 To connect this RSVP form to your email, you'll need to:
               </p>
@@ -278,12 +279,12 @@ const RSVP = () => {
               <ol className="space-y-3 text-black list-decimal pl-5">
                 <li>Set up an email service provider (like EmailJS, SendGrid, or Formspree)</li>
                 <li>Get your API keys from the email service</li>
-                <li>Update the <code className="bg-pale-blue px-1 py-0.5 rounded text-black">handleSubmit</code> function in the RSVP.tsx file to send form data to your email</li>
+                <li>Update the <code className="bg-pale-yellow px-1 py-0.5 rounded text-black">handleSubmit</code> function in the RSVP.tsx file to send form data to your email</li>
               </ol>
               
               <div className="mt-6 p-4 bg-white rounded border border-pale-yellow">
                 <p className="font-medium mb-2 text-black">Example code for email integration:</p>
-                <pre className="text-xs overflow-auto p-2 bg-pale-blue rounded text-black">
+                <pre className="text-xs overflow-auto p-2 bg-pale-yellow rounded text-black">
 {`// Example using EmailJS
 const handleSubmit = (e: React.FormEvent) => {
   e.preventDefault();
@@ -339,14 +340,14 @@ const handleSubmit = (e: React.FormEvent) => {
               Important Information
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-              <div className="bg-white rounded-lg p-6 shadow-md">
+              <div className="bg-white rounded-lg p-6 shadow-md border border-pale-yellow">
                 <h3 className="text-lg font-semibold text-black mb-3">RSVP Deadline</h3>
                 <p className="text-black">
                   {/* CUSTOMIZE: Replace with your RSVP deadline */}
                   {/* Example: Please respond by May 15, 2026 so we can finalize our headcount with the caterer and venue. */}
                 </p>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-md">
+              <div className="bg-white rounded-lg p-6 shadow-md border border-pale-yellow">
                 <h3 className="text-lg font-semibold text-black mb-3">Questions?</h3>
                 <p className="text-black">
                   {/* CUSTOMIZE: Replace with your contact information */}

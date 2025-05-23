@@ -19,12 +19,12 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-rose-100">
+    <nav className="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-pale-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 text-rose-600 font-serif text-xl font-bold">
-            <Heart className="w-6 h-6 fill-current" />
+          <Link to="/" className="flex items-center space-x-2 text-black font-serif text-xl font-bold">
+            <Heart className="w-6 h-6 fill-pale-blue text-pale-blue" />
             {/* CUSTOMIZE: Replace with couple's names */}
             <span>Ethan & Marlena</span>
           </Link>
@@ -37,13 +37,13 @@ const Navbar = () => {
                 to={item.path}
                 className={`text-sm font-medium transition-colors duration-200 relative ${
                   isActive(item.path)
-                    ? 'text-rose-600'
-                    : 'text-gray-700 hover:text-rose-600'
+                    ? 'text-black'
+                    : 'text-black hover:text-black'
                 }`}
               >
                 {item.name}
                 {isActive(item.path) && (
-                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-rose-600 rounded-full" />
+                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-pale-blue rounded-full" />
                 )}
               </Link>
             ))}
@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-rose-600 transition-colors"
+              className="text-black hover:text-black transition-colors"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -62,7 +62,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-rose-100">
+          <div className="md:hidden py-4 border-t border-pale-yellow">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
@@ -71,8 +71,8 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`text-sm font-medium transition-colors duration-200 ${
                     isActive(item.path)
-                      ? 'text-rose-600'
-                      : 'text-gray-700 hover:text-rose-600'
+                      ? 'text-black'
+                      : 'text-black hover:text-black'
                   }`}
                 >
                   {item.name}
