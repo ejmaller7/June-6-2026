@@ -1,11 +1,11 @@
 
 import React from 'react';
 import Navbar from '../components/Navbar';
-import { MapPin, Clock, Car, Hotel, UtensilsCrossed, Gift, Music } from 'lucide-react';
+import { MapPin, Clock, Car, Hotel, UtensilsCrossed, Gift, Music, Calendar } from 'lucide-react';
 
 const Details = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-rose-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <Navbar />
       
       {/* Hero Section */}
@@ -22,7 +22,7 @@ const Details = () => {
       </div>
 
       {/* Schedule Section */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-yellow-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-4">
@@ -35,73 +35,157 @@ const Details = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-12">
-              {/* CUSTOMIZE: Add your schedule items here - example structure provided */}
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="flex items-center justify-center w-16 h-16 bg-rose-100 rounded-full mb-4 md:mb-0 flex-shrink-0">
-                  <Clock className="w-8 h-8 text-rose-600" />
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-green-200 rounded-full"></div>
+              
+              <div className="space-y-12">
+                {/* Timeline items */}
+                <div className="flex flex-col items-center relative">
+                  <div className="flex items-center justify-center z-10 w-16 h-16 bg-blue-100 rounded-full mb-4 shadow-md">
+                    <Clock className="w-8 h-8 text-blue-500" />
+                  </div>
+                  <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-lg border border-green-100">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      {/* CUSTOMIZE: Event name */}
+                      Ceremony
+                    </h3>
+                    <div className="flex items-center gap-2 mb-3 text-blue-600">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-medium">
+                        {/* CUSTOMIZE: Time */}
+                        6:00 PM - 6:30 PM
+                      </span>
+                    </div>
+                    <p className="text-gray-600">
+                      {/* CUSTOMIZE: Description */}
+                      We will be exchanging our vows in the garden area of the venue.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                    {/* CUSTOMIZE: Event name */}
-                    Ceremony
-                  </h3>
-                  <p className="text-gray-600 mb-2">
-                    {/* CUSTOMIZE: Time */}
-                    6:00 PM - 6:30 PM
-                  </p>
-                  <p className="text-gray-600 mb-4">
-                    {/* CUSTOMIZE: Location */}
-                    Cocktail Hour
-                  </p>
-                  <p className="text-gray-600 mb-2">
-                    {/* CUSTOMIZE: Description */}
-                    6:30 PM - 7:30 PM
-                  </p>
-                  <p className="text-gray-600 mb-4">
-                    {/* CUSTOMIZE: Description */}
-                    Introduction of Bridal Party & Newlyweds
-                  </p>
-                  <p className="text-gray-600 mb-2">
-                    {/* CUSTOMIZE: Description */}
-                    7:30 PM - 7:40 PM
-                  </p>
-                  <p className="text-gray-600 mb-4">
-                    {/* CUSTOMIZE: Description */}
-                    Dinner
-                  </p>
-                  <p className="text-gray-600 mb-2">
-                    {/* CUSTOMIZE: Description */}
-                    7:45 PM - 8:30 PM
-                  </p>
-                  <p className="text-gray-600 mb-4">
-                    {/* CUSTOMIZE: Description */}
-                    First Dance
-                  </p>
-                  <p className="text-gray-600 mb-2">
-                    {/* CUSTOMIZE: Description */}
-                    8:30 PM
-                  </p>
-                     <p className="text-gray-600 mb-4">
-                    {/* CUSTOMIZE: Description */}
-                    Dancing until Dawn
-                  </p>
-                  <p className="text-gray-600 mb-2">
-                    {/* CUSTOMIZE: Description */}
-                    8:30 PM - 11:00 PM
-                  </p>
+
+                <div className="flex flex-col items-center relative">
+                  <div className="flex items-center justify-center z-10 w-16 h-16 bg-yellow-100 rounded-full mb-4 shadow-md">
+                    <UtensilsCrossed className="w-8 h-8 text-yellow-600" />
+                  </div>
+                  <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-lg border border-yellow-100">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      {/* CUSTOMIZE: Event name */}
+                      Cocktail Hour
+                    </h3>
+                    <div className="flex items-center gap-2 mb-3 text-blue-600">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-medium">
+                        {/* CUSTOMIZE: Time */}
+                        6:30 PM - 7:30 PM
+                      </span>
+                    </div>
+                    <p className="text-gray-600">
+                      {/* CUSTOMIZE: Description */}
+                      Enjoy drinks and appetizers while we take photos.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center relative">
+                  <div className="flex items-center justify-center z-10 w-16 h-16 bg-green-100 rounded-full mb-4 shadow-md">
+                    <UtensilsCrossed className="w-8 h-8 text-green-600" />
+                  </div>
+                  <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-lg border border-green-100">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      {/* CUSTOMIZE: Event name */}
+                      Introduction of Bridal Party & Newlyweds
+                    </h3>
+                    <div className="flex items-center gap-2 mb-3 text-blue-600">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-medium">
+                        {/* CUSTOMIZE: Time */}
+                        7:30 PM - 7:40 PM
+                      </span>
+                    </div>
+                    <p className="text-gray-600">
+                      {/* CUSTOMIZE: Description */}
+                      Our wedding party will be introduced, followed by our first appearance as a married couple.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center relative">
+                  <div className="flex items-center justify-center z-10 w-16 h-16 bg-blue-100 rounded-full mb-4 shadow-md">
+                    <UtensilsCrossed className="w-8 h-8 text-blue-500" />
+                  </div>
+                  <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-lg border border-blue-100">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      {/* CUSTOMIZE: Event name */}
+                      Dinner
+                    </h3>
+                    <div className="flex items-center gap-2 mb-3 text-blue-600">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-medium">
+                        {/* CUSTOMIZE: Time */}
+                        7:45 PM - 8:30 PM
+                      </span>
+                    </div>
+                    <p className="text-gray-600">
+                      {/* CUSTOMIZE: Description */}
+                      A plated dinner will be served to all guests.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center relative">
+                  <div className="flex items-center justify-center z-10 w-16 h-16 bg-yellow-100 rounded-full mb-4 shadow-md">
+                    <Music className="w-8 h-8 text-yellow-600" />
+                  </div>
+                  <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-lg border border-yellow-100">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      {/* CUSTOMIZE: Event name */}
+                      First Dance
+                    </h3>
+                    <div className="flex items-center gap-2 mb-3 text-blue-600">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-medium">
+                        {/* CUSTOMIZE: Time */}
+                        8:30 PM
+                      </span>
+                    </div>
+                    <p className="text-gray-600">
+                      {/* CUSTOMIZE: Description */}
+                      We will share our first dance as a married couple.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center relative">
+                  <div className="flex items-center justify-center z-10 w-16 h-16 bg-green-100 rounded-full mb-4 shadow-md">
+                    <Music className="w-8 h-8 text-green-600" />
+                  </div>
+                  <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-lg border border-green-100">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      {/* CUSTOMIZE: Event name */}
+                      Dancing until Dawn
+                    </h3>
+                    <div className="flex items-center gap-2 mb-3 text-blue-600">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-medium">
+                        {/* CUSTOMIZE: Time */}
+                        8:30 PM - 11:00 PM
+                      </span>
+                    </div>
+                    <p className="text-gray-600">
+                      {/* CUSTOMIZE: Description */}
+                      Dance the night away with us!
+                    </p>
+                  </div>
                 </div>
               </div>
-
-              {/* CUSTOMIZE: Add more schedule items following the same pattern */}
-              {/* Example: Cocktail Hour, Reception, Dinner, Dancing, etc. */}
             </div>
           </div>
         </div>
       </div>
 
       {/* Venue Information */}
-      <div className="py-16 bg-gradient-to-r from-rose-50 to-pink-50">
+      <div className="py-16 bg-gradient-to-r from-green-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-4">
@@ -173,7 +257,7 @@ const Details = () => {
       </div>
 
       {/* Accommodations */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-yellow-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-4">
@@ -232,7 +316,7 @@ const Details = () => {
       </div>
 
       {/* Travel Information */}
-      <div className="py-16 bg-gradient-to-r from-rose-50 to-pink-50">
+      <div className="py-16 bg-gradient-to-r from-blue-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-4">
@@ -272,7 +356,7 @@ const Details = () => {
       </div>
 
       {/* Additional Information */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-yellow-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-4">
@@ -281,51 +365,47 @@ const Details = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {/* CUSTOMIZE: Add additional information blocks as needed */}
-            
-            {/* Attire */}
-            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6 text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-rose-100 rounded-full mb-4">
-                <UtensilsCrossed className="w-6 h-6 text-rose-600" />
+            {/* Dinner Options */}
+            <div className="bg-gradient-to-br from-yellow-50 to-green-50 rounded-xl p-6 text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
+                <UtensilsCrossed className="w-6 h-6 text-green-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">Dinner Options</h3>
               <p className="text-gray-600">
                 {/* CUSTOMIZE: Add information about food options */}
-                {/* Example: We will be serving a choice of Option 1 or Option 2. Please indicate your preference in the RSVP form. */}
+                We will be serving a choice of Option 1 or Option 2. Please indicate your preference in the RSVP form.
               </p>
             </div>
             
             {/* Registry */}
-            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6 text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-rose-100 rounded-full mb-4">
-                <Gift className="w-6 h-6 text-rose-600" />
+            <div className="bg-gradient-to-br from-blue-50 to-yellow-50 rounded-xl p-6 text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
+                <Gift className="w-6 h-6 text-blue-500" />
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">Registry</h3>
               <p className="text-gray-600 mb-4">
                 {/* CUSTOMIZE: Add information about your registry */}
-                {/* Example: We've registered at several stores. Visit our registry page to see our wish list. */}
+                We've registered at several stores. Visit our registry page to see our wish list.
               </p>
               <a 
                 href="/registry" 
-                className="text-rose-600 hover:text-rose-700 font-medium transition-colors"
+                className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
               >
                 View Registry
               </a>
             </div>
             
             {/* Music */}
-            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6 text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-rose-100 rounded-full mb-4">
-                <Music className="w-6 h-6 text-rose-600" />
+            <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-6 text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-yellow-100 rounded-full mb-4">
+                <Music className="w-6 h-6 text-yellow-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">Song Requests</h3>
               <p className="text-gray-600">
                 {/* CUSTOMIZE: Add information about music requests */}
-                {/* Example: Have a song you want to hear at the reception? Let us know in your RSVP! */}
+                Have a song you want to hear at the reception? Let us know in your RSVP!
               </p>
             </div>
-            
-            {/* CUSTOMIZE: Add more information blocks as needed */}
           </div>
         </div>
       </div>
