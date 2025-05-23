@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 text-black font-serif text-xl font-bold">
-            <Heart className="w-6 h-6 fill-pale-blue text-pale-blue" />
+            <Heart className="w-6 h-6 fill-pale-yellow text-pale-yellow" />
             {/* CUSTOMIZE: Replace with couple's names */}
             <span>Ethan & Marlena</span>
           </Link>
