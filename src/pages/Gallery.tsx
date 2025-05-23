@@ -50,16 +50,16 @@ const Gallery = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-rose-50 to-white">
+    <div className="min-h-screen bg-white">
       <Navbar />
       
       {/* Hero Section */}
       <div className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-serif text-gray-800 mb-6">
+          <h1 className="text-4xl md:text-6xl font-serif text-black mb-6">
             Photo Gallery
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-2xl mx-auto leading-relaxed">
             {/* CUSTOMIZE: Replace with your gallery introduction */}
             {/* Example: Explore our favorite moments from our engagement photoshoot. Click on any image to enlarge. */}
           </p>
@@ -71,7 +71,7 @@ const Gallery = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {images.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-xl text-gray-500">
+              <p className="text-xl text-black">
                 {/* This message will show when no images have been added yet */}
                 No photos have been added yet. Please add your engagement photos to display them here.
               </p>
@@ -93,14 +93,6 @@ const Gallery = () => {
               ))}
             </div>
           )}
-
-          {/* CUSTOMIZE: Instructions for adding photos */}
-          {/* 
-            To add photos to the gallery:
-            1. Upload your images to the "public" folder
-            2. Update the images array in this file with the correct paths and information
-            3. Make sure each image has a unique ID, path, alt text, and dimensions
-          */}
         </div>
       </div>
 
@@ -137,27 +129,27 @@ const Gallery = () => {
       )}
 
       {/* Upload Instructions */}
-      <div className="py-16 bg-gradient-to-r from-rose-100 to-pink-100">
+      <div className="py-16 bg-pale-yellow">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-serif text-gray-800 mb-6">
+          <h2 className="text-3xl font-serif text-black mb-6">
             Add Your Photos
           </h2>
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-black mb-6">
               {/* CUSTOMIZE: Instructions for adding photos */}
               To add your engagement photos to the gallery, you'll need to:
             </p>
-            <ol className="text-left space-y-4 text-gray-700 max-w-lg mx-auto">
+            <ol className="text-left space-y-4 text-black max-w-lg mx-auto">
               <li className="flex items-start">
-                <span className="bg-rose-100 rounded-full w-6 h-6 flex items-center justify-center text-rose-600 font-medium mr-2 flex-shrink-0">1</span>
+                <span className="bg-pale-blue rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">1</span>
                 <span>Upload your images to the public folder in the project</span>
               </li>
               <li className="flex items-start">
-                <span className="bg-rose-100 rounded-full w-6 h-6 flex items-center justify-center text-rose-600 font-medium mr-2 flex-shrink-0">2</span>
+                <span className="bg-pale-blue rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">2</span>
                 <span>Edit this file (Gallery.tsx) to include your images in the images array</span>
               </li>
               <li className="flex items-start">
-                <span className="bg-rose-100 rounded-full w-6 h-6 flex items-center justify-center text-rose-600 font-medium mr-2 flex-shrink-0">3</span>
+                <span className="bg-pale-blue rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">3</span>
                 <span>For each image, include a unique ID, the path to the image, alt text, and the original dimensions</span>
               </li>
             </ol>

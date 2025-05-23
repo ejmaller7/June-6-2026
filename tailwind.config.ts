@@ -20,6 +20,11 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Define our custom colors
+				'pale-yellow': '#FFF8DC', // Pale yellow for secondary elements
+				'pale-blue': '#E6F2FF', // Pale blue for accent elements
+				
+				// Original color definitions
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

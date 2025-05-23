@@ -28,13 +28,13 @@ const QuickDetails = () => {
   ];
 
   return (
-    <div className="py-16 bg-blue-50">
+    <div className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif text-black mb-4">
             Wedding Details
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             {/* CUSTOMIZE: Replace with your details intro text */}
             Here are all of the essential details for our special day. We can't wait to celebrate with you!
           </p>
@@ -44,13 +44,13 @@ const QuickDetails = () => {
           {details.map((detail, index) => (
             <div
               key={index}
-              className="text-center p-6 rounded-xl bg-gradient-to-br from-yellow-50 to-green-50 hover:shadow-lg transition-shadow duration-200"
+              className="text-center p-6 rounded-xl bg-white border border-pale-yellow hover:shadow-lg transition-shadow duration-200"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-                <detail.icon className="w-8 h-8 text-blue-500" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-pale-blue rounded-full mb-4">
+                <detail.icon className="w-8 h-8 text-black" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">{detail.title}</h3>
-              <p className="text-gray-600">{detail.info}</p>
+              <h3 className="text-lg font-semibold text-black mb-2">{detail.title}</h3>
+              <p className="text-black">{detail.info}</p>
             </div>
           ))}
         </div>

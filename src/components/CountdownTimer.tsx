@@ -31,18 +31,18 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-rose-50 to-pink-50 py-16">
+    <div className="bg-pale-yellow py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-8">
+        <h2 className="text-3xl md:text-4xl font-serif text-black mb-8">
           {/* CUSTOMIZE: Replace with your countdown heading */}
           Counting Down to Our Big Day!
         </h2>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
           {Object.entries(timeLeft).map(([unit, value]) => (
-            <div key={unit} className="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-200">
-              <div className="text-3xl md:text-4xl font-bold text-rose-600 mb-2">{value}</div>
-              <div className="text-gray-600 font-medium capitalize">{unit}</div>
+            <div key={unit} className="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-200 border border-pale-blue">
+              <div className="text-3xl md:text-4xl font-bold text-black mb-2">{value}</div>
+              <div className="text-black font-medium capitalize">{unit}</div>
             </div>
           ))}
         </div>

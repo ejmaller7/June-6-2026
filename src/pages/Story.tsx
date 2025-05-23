@@ -32,16 +32,16 @@ const Story = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-rose-50 to-white">
+    <div className="min-h-screen bg-white">
       <Navbar />
       
       {/* Hero Section */}
       <div className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-serif text-gray-800 mb-6">
+          <h1 className="text-4xl md:text-6xl font-serif text-black mb-6">
             Our Love Story
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             {/* CUSTOMIZE: Replace with your story introduction */}
             Every love story is beautiful, but ours is our favorite. From a chance encounter 
             to forever together, here's how our journey began and where it's leading us.
@@ -54,12 +54,12 @@ const Story = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-rose-200 h-full"></div>
+            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-pale-blue h-full"></div>
             
             {timeline.map((event, index) => (
               <div key={index} className={`relative flex items-center mb-16 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-rose-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-yellow rounded-full border-4 border-white shadow-lg z-10"></div>
                 
                 {/* Content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-8 pl-12' : 'md:pl-8 pl-12'}`}>
@@ -70,9 +70,9 @@ const Story = () => {
                       className="w-full h-64 object-cover"
                     />
                     <div className="p-6">
-                      <div className="text-rose-600 font-bold text-lg mb-2">{event.year}</div>
-                      <h3 className="text-2xl font-serif text-gray-800 mb-3">{event.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{event.description}</p>
+                      <div className="text-pale-blue font-bold text-lg mb-2">{event.year}</div>
+                      <h3 className="text-2xl font-serif text-black mb-3">{event.title}</h3>
+                      <p className="text-black leading-relaxed">{event.description}</p>
                     </div>
                   </div>
                 </div>
@@ -86,10 +86,10 @@ const Story = () => {
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif text-black mb-4">
               Engagement Photos
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-black max-w-2xl mx-auto">
               {/* CUSTOMIZE: Replace with your engagement photos description */}
               A glimpse into our engagement photo session, capturing the joy and excitement 
               of this special chapter in our lives.

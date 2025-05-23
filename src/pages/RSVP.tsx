@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { Button } from '@/components/ui/button';
@@ -55,16 +54,16 @@ const RSVP = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-rose-50 to-white">
+    <div className="min-h-screen bg-white">
       <Navbar />
       
       {/* Hero Section */}
       <div className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-serif text-gray-800 mb-6">
+          <h1 className="text-4xl md:text-6xl font-serif text-black mb-6">
             RSVP
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-2xl mx-auto leading-relaxed">
             {/* CUSTOMIZE: Replace with your RSVP introduction */}
             {/* Example: We're so excited to celebrate with you! Please let us know if you'll be joining us 
             for our special day by [RSVP Deadline Date]. */}
@@ -75,7 +74,7 @@ const RSVP = () => {
       {/* RSVP Form */}
       <div className="py-16">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white border border-pale-yellow rounded-xl shadow-lg p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>
@@ -253,7 +252,7 @@ const RSVP = () => {
               <div className="pt-6">
                 <Button 
                   type="submit" 
-                  className="w-full bg-rose-600 hover:bg-rose-700 text-white py-3 text-lg font-medium"
+                  className="w-full bg-pale-yellow hover:bg-white hover:border-pale-yellow border border-pale-yellow text-black py-3 text-lg font-medium"
                   disabled={!formData.name || !formData.email || !formData.attendance}
                 >
                   Submit RSVP
@@ -265,26 +264,26 @@ const RSVP = () => {
       </div>
 
       {/* Email Integration Instructions */}
-      <div className="py-16 bg-gradient-to-r from-rose-100 to-pink-100">
+      <div className="py-16 bg-pale-yellow">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-serif text-gray-800 mb-6">
+            <h2 className="text-3xl font-serif text-black mb-6">
               Email Integration Instructions
             </h2>
             <div className="bg-white rounded-lg p-6 shadow-md text-left">
-              <p className="text-gray-600 mb-4">
+              <p className="text-black mb-4">
                 To connect this RSVP form to your email, you'll need to:
               </p>
               
-              <ol className="space-y-3 text-gray-600 list-decimal pl-5">
+              <ol className="space-y-3 text-black list-decimal pl-5">
                 <li>Set up an email service provider (like EmailJS, SendGrid, or Formspree)</li>
                 <li>Get your API keys from the email service</li>
-                <li>Update the <code>handleSubmit</code> function in the RSVP.tsx file to send form data to your email</li>
+                <li>Update the <code className="bg-pale-blue px-1 py-0.5 rounded text-black">handleSubmit</code> function in the RSVP.tsx file to send form data to your email</li>
               </ol>
               
-              <div className="mt-6 p-4 bg-gray-50 rounded border border-gray-200">
-                <p className="font-medium mb-2">Example code for email integration:</p>
-                <pre className="text-xs overflow-auto p-2 bg-gray-100 rounded">
+              <div className="mt-6 p-4 bg-white rounded border border-pale-yellow">
+                <p className="font-medium mb-2 text-black">Example code for email integration:</p>
+                <pre className="text-xs overflow-auto p-2 bg-pale-blue rounded text-black">
 {`// Example using EmailJS
 const handleSubmit = (e: React.FormEvent) => {
   e.preventDefault();
@@ -333,23 +332,23 @@ const handleSubmit = (e: React.FormEvent) => {
       </div>
 
       {/* Important Information */}
-      <div className="py-16 bg-gradient-to-r from-rose-100 to-pink-100">
+      <div className="py-16 bg-pale-yellow">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-serif text-gray-800 mb-6">
+            <h2 className="text-3xl font-serif text-black mb-6">
               Important Information
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">RSVP Deadline</h3>
-                <p className="text-gray-600">
+                <h3 className="text-lg font-semibold text-black mb-3">RSVP Deadline</h3>
+                <p className="text-black">
                   {/* CUSTOMIZE: Replace with your RSVP deadline */}
                   {/* Example: Please respond by May 15, 2026 so we can finalize our headcount with the caterer and venue. */}
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Questions?</h3>
-                <p className="text-gray-600">
+                <h3 className="text-lg font-semibold text-black mb-3">Questions?</h3>
+                <p className="text-black">
                   {/* CUSTOMIZE: Replace with your contact information */}
                   {/* Example: If you have any questions about the wedding or need to make changes to your RSVP, please contact us at couple@example.com. */}
                 </p>
