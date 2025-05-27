@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Calendar, MapPin } from 'lucide-react';
-import BackgroundPic from '@/../../public/images/MeNMar.jpg';
 
 const Hero = () => {
   return (
@@ -10,8 +9,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          // CUSTOMIZE: Replace this URL with your own engagement photo
-          backgroundImage: `{BackgroundPic}`,
+          backgroundImage: `url('/images/MeNMar.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-black/30" />
