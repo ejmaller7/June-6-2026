@@ -23,7 +23,7 @@ const QuickDetails = () => {
     {
       icon: Users,
       title: 'Dress Code',
-      info: 'Black Tie Optional', // Replace with your dress code
+      info: 'Formal (Tie optional)', // Replace with your dress code
     },
   ];
 

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Calendar, MapPin } from 'lucide-react';
+import BackgroundPic from '@/../../public/images/MeNMar.jpg';
 
 const Hero = () => {
   return (
@@ -10,7 +11,7 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           // CUSTOMIZE: Replace this URL with your own engagement photo
-          backgroundImage: 'url(https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
+          backgroundImage: `{BackgroundPic}`,
         }}
       >
         <div className="absolute inset-0 bg-black/30" />
@@ -37,7 +38,7 @@ const Hero = () => {
             <div className="flex items-center gap-3 text-lg">
               <MapPin className="w-6 h-6 text-pale-blue" />
               {/* CUSTOMIZE: Replace with your venue name and location */}
-              <span>Stonehaven at the Mill, New Braunfels, TX</span>
+              <span>Stonehaven at the Milestone, New Braunfels, TX</span>
             </div>
           </div>
 
