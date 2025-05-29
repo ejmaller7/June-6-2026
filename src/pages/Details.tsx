@@ -131,7 +131,7 @@ const Details = () => {
                       </div>
                       <p className="text-black">
                         {/* CUSTOMIZE: Description */}
-                        A plated dinner will be served to all guests. During dinner, there will be a few speeched from both the groom and the bride's side.
+                        A plated dinner will be served to all guests. During dinner, there will be a few speeches from both the groom and the bride's side.
                       </p>
                     </div>
                   </div>
