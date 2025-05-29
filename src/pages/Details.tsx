@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import { MapPin, Clock, Car, Hotel, UtensilsCrossed, Gift, Music, Calendar } from 'lucide-react';
@@ -116,7 +115,7 @@ const Details = () => {
                 <div className="relative flex items-center md:justify-between">
                   <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-blue rounded-full border-4 border-white shadow-md z-10"></div>
                   
-                  <div className="ml-12 md:ml-auto md:w-5/12 md:pl-8 md:text-left">
+                  <div className="ml-12 md:ml-0 md:w-5/12 md:pr-8 md:text-right">
                     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
                       <h3 className="text-xl font-semibold text-black mb-2">
                         {/* CUSTOMIZE: Event name */}
@@ -140,7 +139,7 @@ const Details = () => {
                 <div className="relative flex items-center md:justify-between">
                   <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-blue rounded-full border-4 border-white shadow-md z-10"></div>
                   
-                  <div className="ml-12 md:ml-0 md:w-5/12 md:pr-8 md:text-right">
+                  <div className="ml-12 md:ml-auto md:w-5/12 md:pl-8 md:text-left">
                     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
                       <h3 className="text-xl font-semibold text-black mb-2">
                         {/* CUSTOMIZE: Event name */}
@@ -275,32 +274,30 @@ const Details = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* CUSTOMIZE: Replace with your accommodation options */}
-            {/* Hotel 1 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Hotel 1 - JW Marriott */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow h-full flex flex-col">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Hotel" 
+                  src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="JW Marriott San Antonio Hill Country Resort & Spa" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-4">
-                  <Hotel className="w-5 h-5 text-pale-blue mr-2" />
+                  <Hotel className="w-5 h-5 text-blue-400 mr-2" />
                   <h3 className="text-xl font-semibold text-black">
-                    {/* CUSTOMIZE: Hotel name */}
                     JW Marriott
                   </h3>
                 </div>
-                <p className="text-black mb-4">
-                  {/* CUSTOMIZE: Hotel description, address, and details */}
-                  Located just 30 minutes from the venue. This is one of the nicest hotels in San Antonio and is home to the renowned TPC San Antonio golf course played on the PGA tour.
-                </p>
-                <div className="flex justify-between items-center">
+                <div className="flex-grow flex items-center justify-center">
+                  <p className="text-black text-center">
+                    Located just 30 minutes from the venue. This is one of the nicest hotels in San Antonio and is home to the renowned TPC San Antonio golf course played on the PGA tour.
+                  </p>
+                </div>
+                <div className="flex justify-between items-center mt-6">
                   <span className="text-black font-medium">
-                    {/* CUSTOMIZE: Room rate */}
                     $400/night
                   </span>
                   <a 
@@ -309,79 +306,72 @@ const Details = () => {
                     rel="noopener noreferrer"
                     className="text-sm bg-pale-yellow hover:bg-white border border-pale-yellow text-black px-4 py-2 rounded-full transition-colors"
                   >
-                    {/* CUSTOMIZE: Replace with booking link */}
                     Book Now
                   </a>
                 </div>
               </div>
             </div>
             
-            {/* CUSTOMIZE: Add more hotel options following the same pattern */}
-            {/* Hotel 2 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow">
+            {/* Hotel 2 - Courtyard Marriott */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow h-full flex flex-col">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Hotel" 
+                  src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Courtyard by Marriott San Antonio Airport" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-4">
-                  <Hotel className="w-5 h-5 text-pale-blue mr-2" />
+                  <Hotel className="w-5 h-5 text-blue-400 mr-2" />
                   <h3 className="text-xl font-semibold text-black">
-                    {/* CUSTOMIZE: Hotel name */}
                     Courtyard Marriott
                   </h3>
                 </div>
-                <p className="text-black mb-4">
-                  {/* CUSTOMIZE: Hotel description, address, and details */}
-                  Located a little farther from the venue, but closer to the San Antonio airport. This is a hotel that will provide you with the easiest access to everything and is the perfect middle
-                  ground between being in between the airport and the venue.
-                </p>
-                <div className="flex justify-between items-center">
+                <div className="flex-grow flex items-center justify-center">
+                  <p className="text-black text-center">
+                    Located a little farther from the venue, but closer to the San Antonio airport. This is a hotel that will provide you with the easiest access to everything and is the perfect middle ground between being in between the airport and the venue.
+                  </p>
+                </div>
+                <div className="flex justify-between items-center mt-6">
                   <span className="text-black font-medium">
-                    {/* CUSTOMIZE: Room rate */}
                     $185/night
                   </span>
                   <a 
-                    href="https://www.marriott.com/reservation/rateListMenu.mi?dclid=CjkKEQjw6NrBBhCnsr3GzNuZ-dwBEiQAFJKSzdZYjaWswLT_FEGE6nioptaK-epr62qWQpHtc12vfe3w_wcB&gbraid=0AAAAAo3SzG6xw854UOJGzACxCA_PvgDel&gclid=CjwKCAjw6NrBBhB6EiwAvnT_rpIy08LjoDXH3ROE8WR-kpt8zwDWRpHO2f0yVJm2Xgcpk_sh3_Eq_RoCGC0QAvD_BwE" 
+                    href="https://www.marriott.com/reservation/rateListMenu.mi?dclid=CjkKEQjw6NrBBhCnsr3GzNuZ-dwBEiQAFJKSzdZYjaWswLT_FEGE6nioptaK-epr62qWQpHtc12vefe3w_wcB&gbraid=0AAAAAo3SzG6xw854UOJGzACxCA_PvgDel&gclid=CjwKCAjw6NrBBhB6EiwAvnT_rpIy08LjoDXH3ROE8WR-kpt8zwDWRpHO2f0yVJm2Xgcpk_sh3_Eq_RoCGC0QAvD_BwE" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm bg-pale-yellow hover:bg-white border border-pale-yellow text-black px-4 py-2 rounded-full transition-colors"
                   >
-                    {/* CUSTOMIZE: Replace with booking link */}
                     Book Now
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* Hotel 3 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow">
+            {/* Hotel 3 - Hotel Emma */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow h-full flex flex-col">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Hotel" 
+                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Hotel Emma San Antonio" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-4">
-                  <Hotel className="w-5 h-5 text-pale-blue mr-2" />
+                  <Hotel className="w-5 h-5 text-blue-400 mr-2" />
                   <h3 className="text-xl font-semibold text-black">
-                    {/* CUSTOMIZE: Hotel name */}
                     Hotel Emma
                   </h3>
                 </div>
-                <p className="text-black mb-4">
-                  {/* CUSTOMIZE: Hotel description, address, and details */}
-                  Located approximately 45 minutes from the venue. If you are interested in staying at the only 5 Star Hotel San Antonio has to offer, Hotel Emma is it. While it is
-                  located the farthest from the Venue, it gives you the opportunity to experience San Antonio if you plan on staying for more than a couple days.
-                </p>
-                <div className="flex justify-between items-center">
+                <div className="flex-grow flex items-center justify-center">
+                  <p className="text-black text-center">
+                    Located approximately 45 minutes from the venue. If you are interested in staying at the only 5 Star Hotel San Antonio has to offer, Hotel Emma is it. While it is located the farthest from the Venue, it gives you the opportunity to experience San Antonio if you plan on staying for more than a couple days.
+                  </p>
+                </div>
+                <div className="flex justify-between items-center mt-6">
                   <span className="text-black font-medium">
-                    {/* CUSTOMIZE: Room rate */}
                     $560/night
                   </span>
                   <a 
@@ -390,7 +380,6 @@ const Details = () => {
                     rel="noopener noreferrer"
                     className="text-sm bg-pale-yellow hover:bg-white border border-pale-yellow text-black px-4 py-2 rounded-full transition-colors"
                   >
-                    {/* CUSTOMIZE: Replace with booking link */}
                     Book Now
                   </a>
                 </div>
