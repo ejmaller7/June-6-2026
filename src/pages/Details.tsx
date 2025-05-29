@@ -279,14 +279,14 @@ const Details = () => {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow h-full flex flex-col">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  src="https://cache.marriott.com/content/dam/marriott-renditions/SATJW/satjw-exterior-0087-hor-wide.jpg" 
                   alt="JW Marriott San Antonio Hill Country Resort & Spa" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-4">
-                  <Hotel className="w-5 h-5 text-blue-400 mr-2" />
+                  <Hotel className="w-5 h-5 text-blue-500 mr-2" />
                   <h3 className="text-xl font-semibold text-black">
                     JW Marriott
                   </h3>
@@ -316,14 +316,14 @@ const Details = () => {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow h-full flex flex-col">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  src="https://cache.marriott.com/content/dam/marriott-renditions/CYSAT/cysat-exterior-0014-hor-wide.jpg" 
                   alt="Courtyard by Marriott San Antonio Airport" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-4">
-                  <Hotel className="w-5 h-5 text-blue-400 mr-2" />
+                  <Hotel className="w-5 h-5 text-blue-500 mr-2" />
                   <h3 className="text-xl font-semibold text-black">
                     Courtyard Marriott
                   </h3>
@@ -353,14 +353,14 @@ const Details = () => {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow h-full flex flex-col">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  src="https://cache.marriott.com/content/dam/marriott-renditions/SATEMM/satemm-exterior-0118-hor-wide.jpg" 
                   alt="Hotel Emma San Antonio" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-4">
-                  <Hotel className="w-5 h-5 text-blue-400 mr-2" />
+                  <Hotel className="w-5 h-5 text-blue-500 mr-2" />
                   <h3 className="text-xl font-semibold text-black">
                     Hotel Emma
                   </h3>

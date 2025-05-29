@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { ExternalLink, Check } from 'lucide-react';
@@ -25,23 +24,26 @@ const Registry = () => {
   // CUSTOMIZE: Add your desired registry stores here
   // Format: { name: "Store Name", url: "https://store-website.com", logo: "path-to-logo-image" }
   const [stores] = useState<Store[]>([
-    // Amazon example - CUSTOMIZE with your registry URL
-    // { name: "Amazon", url: "https://www.amazon.com/wedding/registry-link", logo: "/logos/amazon.png" },
+    // Amazon Wedding Registry
+    { 
+      name: "Amazon Wedding Registry", 
+      url: "https://www.amazon.com/wedding/home", 
+      logo: "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/112018/untitled-1_282.png?7LNvQyotyh9Mn_33XKQWCNMULb37ue8L&itok=QxfNcLlf" 
+    },
     
-    // Crate & Barrel example - CUSTOMIZE with your registry URL
-    // { name: "Crate & Barrel", url: "https://www.crateandbarrel.com/gift-registry/registry-link", logo: "/logos/crate-and-barrel.png" },
+    // Sur La Table
+    { 
+      name: "Sur La Table", 
+      url: "https://www.surlatable.com/registry/", 
+      logo: "https://logos-world.net/wp-content/uploads/2021/11/Sur-La-Table-Logo.png" 
+    },
     
-    // Sur La Table example - CUSTOMIZE with your registry URL
-    // { name: "Sur La Table", url: "https://www.surlatable.com/registry/registry-link", logo: "/logos/sur-la-table.png" },
-    
-    // Target example - CUSTOMIZE with your registry URL
-    // { name: "Target", url: "https://www.target.com/gift-registry/registry-link", logo: "/logos/target.png" },
-    
-    // Bed Bath & Beyond example - CUSTOMIZE with your registry URL
-    // { name: "Bed Bath & Beyond", url: "https://www.bedbathandbeyond.com/store/giftregistry/registry-link", logo: "/logos/bed-bath-beyond.png" },
-    
-    // Williams Sonoma example - CUSTOMIZE with your registry URL
-    // { name: "Williams Sonoma", url: "https://www.williams-sonoma.com/registry/registry-link", logo: "/logos/williams-sonoma.png" },
+    // Crate & Barrel
+    { 
+      name: "Crate & Barrel", 
+      url: "https://www.crateandbarrel.com/gift-registry/", 
+      logo: "https://logos-world.net/wp-content/uploads/2020/12/Crate-and-Barrel-Logo.png" 
+    },
     
     // CUSTOMIZE: Add more stores as needed following the same format
   ]);
