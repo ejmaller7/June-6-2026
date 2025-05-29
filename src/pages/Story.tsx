@@ -63,13 +63,10 @@ const Story = () => {
             
             {timeline.map((event, index) => (
               <div key={index} className={`relative flex items-center mb-16 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
-                
                 {/* Content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-8 pl-12' : 'md:pl-8 pl-12'}`}>
                   <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-pale-yellow">
-                    <div className="text-blue-600 font-bold text-lg mb-2">{event.year}</div>
+                    <div className="text-blue-400 font-bold text-lg mb-2">{event.year}</div>
                     <h3 className="text-2xl font-serif text-black mb-4">{event.title}</h3>
                     <p className="text-black leading-relaxed text-lg">{event.description}</p>
                   </div>
