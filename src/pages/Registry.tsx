@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { ExternalLink, Check } from 'lucide-react';
@@ -28,21 +29,21 @@ const Registry = () => {
     { 
       name: "Amazon Wedding Registry", 
       url: "https://www.amazon.com/wedding/home", 
-      logo: "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/112018/untitled-1_282.png?7LNvQyotyh9Mn_33XKQWCNMULb37ue8L&itok=QxfNcLlf" 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/320px-Amazon_logo.svg.png" 
     },
     
     // Sur La Table
     { 
       name: "Sur La Table", 
       url: "https://www.surlatable.com/registry/", 
-      logo: "https://logos-world.net/wp-content/uploads/2021/11/Sur-La-Table-Logo.png" 
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Sur_La_Table_logo.svg/320px-Sur_La_Table_logo.svg.png" 
     },
     
     // Crate & Barrel
     { 
       name: "Crate & Barrel", 
       url: "https://www.crateandbarrel.com/gift-registry/", 
-      logo: "https://logos-world.net/wp-content/uploads/2020/12/Crate-and-Barrel-Logo.png" 
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/Crate_%26_Barrel_logo.svg/320px-Crate_%26_Barrel_logo.svg.png" 
     },
     
     // CUSTOMIZE: Add more stores as needed following the same format
@@ -83,8 +84,8 @@ const Registry = () => {
           </h1>
           <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed mb-8">
             {/* CUSTOMIZE: Replace with your registry introduction */}
-            {/* Example: Your presence at our wedding is the greatest gift of all. If you wish to honor us 
-            with a gift, we've curated a selection of items that will help us build our new home together. */}
+            Your presence at our wedding is the greatest gift of all. If you wish to honor us 
+            with a gift, we've curated a selection of items that will help us build our new home together.
           </p>
         </div>
       </div>
@@ -102,26 +103,31 @@ const Registry = () => {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {stores.map((store, index) => (
                 <a
                   key={index}
                   href={store.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white border border-pale-yellow rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+                  className="group bg-white border border-pale-yellow rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden bg-pale-yellow">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden bg-gray-50 flex items-center justify-center">
                     <img 
                       src={store.logo} 
                       alt={store.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="max-w-16 max-h-16 object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="font-medium text-black group-hover:text-pale-blue transition-colors">
+                  <h3 className="font-semibold text-lg text-black group-hover:text-pale-blue transition-colors mb-3">
                     {store.name}
                   </h3>
-                  <ExternalLink className="w-4 h-4 mx-auto mt-2 text-black group-hover:text-pale-blue transition-colors" />
+                  <div className="flex items-center justify-center">
+                    <span className="text-sm text-black group-hover:text-pale-blue transition-colors mr-2">
+                      Visit Registry
+                    </span>
+                    <ExternalLink className="w-4 h-4 text-black group-hover:text-pale-blue transition-colors" />
+                  </div>
                 </a>
               ))}
             </div>
@@ -137,9 +143,14 @@ const Registry = () => {
           </h2>
           {registryItems.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-xl text-black">
-                No items have been added yet. Please add your registry items in the Registry.tsx file.
-              </p>
+              <div className="max-w-2xl mx-auto">
+                <p className="text-xl text-black mb-6">
+                  We haven't added specific items to our wish list yet, but you can find everything we love at the stores above!
+                </p>
+                <p className="text-lg text-black">
+                  Simply click on any of the store links above to browse their full selection and find the perfect gift for us.
+                </p>
+              </div>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -211,34 +222,57 @@ const Registry = () => {
         </div>
       </div>
 
-      {/* Instructions and Thank You */}
+      {/* How Registry Works */}
       <div className="py-16 bg-pale-yellow">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-serif text-black mb-6">
-            Instructions for Adding Registry Items
+            How Our Registry Works
           </h2>
           <div className="bg-white rounded-xl shadow-lg p-8 text-left mb-12 border border-pale-yellow">
-            <p className="text-lg text-black mb-6">
-              To add items to your registry:
-            </p>
-            <ol className="space-y-4 text-black">
-              <li className="flex items-start">
-                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">1</span>
-                <span>Upload product images to the public/images folder (create it if it doesn't exist)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">2</span>
-                <span>Add the item to the registryItems array in the Registry.tsx file</span>
-              </li>
-              <li className="flex items-start">
-                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">3</span>
-                <span>Include all required fields: id, name, price, image, store, storeUrl, quantity, purchased, description</span>
-              </li>
-              <li className="flex items-start">
-                <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-2 flex-shrink-0">4</span>
-                <span>Set the "purchased" field to 0 initially, and update it when items are purchased</span>
-              </li>
-            </ol>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-4">For Gift Givers:</h3>
+                <ol className="space-y-3 text-black">
+                  <li className="flex items-start">
+                    <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">1</span>
+                    <span>Click on any store above to visit their website</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">2</span>
+                    <span>Search for our registry or browse items</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">3</span>
+                    <span>Purchase directly through the store</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">4</span>
+                    <span>Items will be shipped to us automatically</span>
+                  </li>
+                </ol>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-4">Registry Benefits:</h3>
+                <ul className="space-y-3 text-black">
+                  <li className="flex items-start">
+                    <span className="text-pale-blue mr-2">•</span>
+                    <span>No duplicate gifts - items are marked as purchased</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-pale-blue mr-2">•</span>
+                    <span>Easy returns and exchanges through each store</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-pale-blue mr-2">•</span>
+                    <span>Multiple price ranges to fit any budget</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-pale-blue mr-2">•</span>
+                    <span>Items ship directly to us</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           
           <h2 className="text-3xl font-serif text-black mb-6">
@@ -246,9 +280,9 @@ const Registry = () => {
           </h2>
           <p className="text-lg text-black leading-relaxed">
             {/* CUSTOMIZE: Replace with your thank you message */}
-            {/* Example: Your love, support, and presence mean the world to us. Any gift you choose to give 
+            Your love, support, and presence mean the world to us. Any gift you choose to give 
             will be cherished as we start this new chapter of our lives together. We're grateful 
-            for each and every one of you who will be celebrating with us on our special day. */}
+            for each and every one of you who will be celebrating with us on our special day.
           </p>
         </div>
       </div>

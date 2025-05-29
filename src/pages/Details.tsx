@@ -41,7 +41,7 @@ const Details = () => {
               {/* Timeline items */}
               <div className="space-y-10">
                 <div className="relative flex items-center md:justify-between">
-                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-blue rounded-full border-4 border-white shadow-md z-10"></div>
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-white rounded-full border-4 border-pale-yellow shadow-md z-10"></div>
                   
                   <div className="ml-12 md:ml-0 md:w-5/12 md:pr-8 md:text-right">
                     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
@@ -65,7 +65,7 @@ const Details = () => {
                 </div>
 
                 <div className="relative flex items-center md:justify-between">
-                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-blue rounded-full border-4 border-white shadow-md z-10"></div>
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-white rounded-full border-4 border-pale-yellow shadow-md z-10"></div>
                   
                   <div className="ml-12 md:ml-auto md:w-5/12 md:pl-8 md:text-left">
                     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
@@ -89,7 +89,7 @@ const Details = () => {
                 </div>
 
                 <div className="relative flex items-center md:justify-between">
-                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-blue rounded-full border-4 border-white shadow-md z-10"></div>
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-white rounded-full border-4 border-pale-yellow shadow-md z-10"></div>
                   
                   <div className="ml-12 md:ml-0 md:w-5/12 md:pr-8 md:text-right">
                     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
@@ -113,9 +113,9 @@ const Details = () => {
                 </div>
 
                 <div className="relative flex items-center md:justify-between">
-                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-blue rounded-full border-4 border-white shadow-md z-10"></div>
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-white rounded-full border-4 border-pale-yellow shadow-md z-10"></div>
                   
-                  <div className="ml-12 md:ml-0 md:w-5/12 md:pr-8 md:text-right">
+                  <div className="ml-12 md:ml-auto md:w-5/12 md:pl-8 md:text-left">
                     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
                       <h3 className="text-xl font-semibold text-black mb-2">
                         {/* CUSTOMIZE: Event name */}
@@ -137,9 +137,9 @@ const Details = () => {
                 </div>
 
                 <div className="relative flex items-center md:justify-between">
-                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-blue rounded-full border-4 border-white shadow-md z-10"></div>
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-white rounded-full border-4 border-pale-yellow shadow-md z-10"></div>
                   
-                  <div className="ml-12 md:ml-auto md:w-5/12 md:pl-8 md:text-left">
+                  <div className="ml-12 md:ml-0 md:w-5/12 md:pr-8 md:text-right">
                     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
                       <h3 className="text-xl font-semibold text-black mb-2">
                         {/* CUSTOMIZE: Event name */}
@@ -161,7 +161,7 @@ const Details = () => {
                 </div>
 
                 <div className="relative flex items-center md:justify-between">
-                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-pale-blue rounded-full border-4 border-white shadow-md z-10"></div>
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-white rounded-full border-4 border-pale-yellow shadow-md z-10"></div>
                   
                   <div className="ml-12 md:ml-auto md:w-5/12 md:pl-8 md:text-left">
                     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
@@ -276,28 +276,28 @@ const Details = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Hotel 1 - JW Marriott */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow h-full flex flex-col">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://cache.marriott.com/content/dam/marriott-renditions/SATJW/satjw-exterior-0087-hor-wide.jpg" 
+                  src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=500&h=300&fit=crop&crop=center" 
                   alt="JW Marriott San Antonio Hill Country Resort & Spa" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col h-[280px]">
                 <div className="flex items-center mb-4">
-                  <Hotel className="w-5 h-5 text-blue-500 mr-2" />
+                  <Hotel className="w-5 h-5 text-[#7BA7BC] mr-2" />
                   <h3 className="text-xl font-semibold text-black">
                     JW Marriott
                   </h3>
                 </div>
                 <div className="flex-grow flex items-center justify-center">
-                  <p className="text-black text-center">
+                  <p className="text-black text-center text-sm">
                     Located just 30 minutes from the venue. This is one of the nicest hotels in San Antonio and is home to the renowned TPC San Antonio golf course played on the PGA tour.
                   </p>
                 </div>
-                <div className="flex justify-between items-center mt-6">
-                  <span className="text-black font-medium">
+                <div className="flex justify-between items-center mt-4">
+                  <span className="text-black font-medium text-lg">
                     $400/night
                   </span>
                   <a 
@@ -313,28 +313,28 @@ const Details = () => {
             </div>
             
             {/* Hotel 2 - Courtyard Marriott */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow h-full flex flex-col">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://cache.marriott.com/content/dam/marriott-renditions/CYSAT/cysat-exterior-0014-hor-wide.jpg" 
+                  src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&h=300&fit=crop&crop=center" 
                   alt="Courtyard by Marriott San Antonio Airport" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col h-[280px]">
                 <div className="flex items-center mb-4">
-                  <Hotel className="w-5 h-5 text-blue-500 mr-2" />
+                  <Hotel className="w-5 h-5 text-[#7BA7BC] mr-2" />
                   <h3 className="text-xl font-semibold text-black">
                     Courtyard Marriott
                   </h3>
                 </div>
                 <div className="flex-grow flex items-center justify-center">
-                  <p className="text-black text-center">
+                  <p className="text-black text-center text-sm">
                     Located a little farther from the venue, but closer to the San Antonio airport. This is a hotel that will provide you with the easiest access to everything and is the perfect middle ground between being in between the airport and the venue.
                   </p>
                 </div>
-                <div className="flex justify-between items-center mt-6">
-                  <span className="text-black font-medium">
+                <div className="flex justify-between items-center mt-4">
+                  <span className="text-black font-medium text-lg">
                     $185/night
                   </span>
                   <a 
@@ -350,28 +350,28 @@ const Details = () => {
             </div>
 
             {/* Hotel 3 - Hotel Emma */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow h-full flex flex-col">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-pale-yellow">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://cache.marriott.com/content/dam/marriott-renditions/SATEMM/satemm-exterior-0118-hor-wide.jpg" 
+                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&h=300&fit=crop&crop=center" 
                   alt="Hotel Emma San Antonio" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col h-[280px]">
                 <div className="flex items-center mb-4">
-                  <Hotel className="w-5 h-5 text-blue-500 mr-2" />
+                  <Hotel className="w-5 h-5 text-[#7BA7BC] mr-2" />
                   <h3 className="text-xl font-semibold text-black">
                     Hotel Emma
                   </h3>
                 </div>
                 <div className="flex-grow flex items-center justify-center">
-                  <p className="text-black text-center">
+                  <p className="text-black text-center text-sm">
                     Located approximately 45 minutes from the venue. If you are interested in staying at the only 5 Star Hotel San Antonio has to offer, Hotel Emma is it. While it is located the farthest from the Venue, it gives you the opportunity to experience San Antonio if you plan on staying for more than a couple days.
                   </p>
                 </div>
-                <div className="flex justify-between items-center mt-6">
-                  <span className="text-black font-medium">
+                <div className="flex justify-between items-center mt-4">
+                  <span className="text-black font-medium text-lg">
                     $560/night
                   </span>
                   <a 
