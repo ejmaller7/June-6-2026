@@ -1,32 +1,38 @@
 
 import React from 'react';
 import Navbar from '../components/Navbar';
+import Proposal1 from '../../public/images/Proposal1.jpg';
+import Proposal2 from '../../public/images/Proposal2.jpg';
+import Proposal3 from '../../public/images/Proposal3.jpg';
+import Proposal4 from '../../public/images/Proposal4.jpg';
+import Proposal5 from '../../public/images/Proposal5.jpg';
+import Proposal6 from '../../public/images/Proposal6.jpg';
 
 const Story = () => {
   // CUSTOMIZE: Replace with your own story timeline events
   const timeline = [
     {
-      year: '20XX', // Replace with actual year
-      title: 'First Meeting',
-      description: 'Describe how you first met', // Replace with your story
+      year: '2016', // Replace with actual year
+      title: 'First time meeting each other',
+      description: 'The first time we ever met was on a soccer field during his sophomore year and her freshman year. They instantly knew nothing, other than Ethan telling his parents of this "cute freshman girl".', // Replace with your story
       image: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Replace with your photo
     },
     {
-      year: '20XX', // Replace with actual year
+      year: '2018', // Replace with actual year
       title: 'First Date',
-      description: 'Describe your first date', // Replace with your story
+      description: 'After promising one of her best friends, Ethan decided to not take Marlena to prom this year, but still went and from there, started getting to know her and eventually asked her out to go to dinner and a movie on June 1, 2018. They ended up going to P.F. Changs and seeing Avengers: Infinity War.', // Replace with your story
       image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Replace with your photo
     },
     {
-      year: '20XX', // Replace with actual year
-      title: 'Moving In Together',
-      description: 'Describe this milestone', // Replace with your story
+      year: '2023 & 2024', // Replace with actual year
+      title: 'Graduating College',
+      description: 'After meeting in high school, we both went to colleges in San Antonio where we grew our relationship.  Ethan graduated in 2023 from the University of Texas at San Antonio with a degree in Finance and Marlena graduated in 2024 from the University of Incarnate Word with a degree in Nursing.', // Replace with your story
       image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Replace with your photo
     },
     {
-      year: '20XX', // Replace with actual year
+      year: '2024', // Replace with actual year
       title: 'The Proposal',
-      description: 'Describe the proposal', // Replace with your story
+      description: 'On October 12, 2024, after waiting for what was actually years, Ethan finally got down on one knee at Boerne Lake, where he asked Marlena to marry him and spend the rest of her life with him, to which she said yes.', // Replace with your story
       image: 'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Replace with your photo
     },
   ];
@@ -39,12 +45,13 @@ const Story = () => {
       <div className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-serif text-black mb-6">
-            Our Love Story
+            Our Story
           </h1>
           <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             {/* CUSTOMIZE: Replace with your story introduction */}
-            Every love story is beautiful, but ours is our favorite. From a chance encounter 
-            to forever together, here's how our journey began and where it's leading us.
+            Every love story is special in its own way, but ours is one for the ages (at least we would like to think so). From going to high school together for
+            2 years (almost) before ever actually talking to each other, to going through college and embarking on the rest of life's journey with each other, we have experienced
+            so much already together and cannot wait for the many memories and years to come.
           </p>
         </div>
       </div>
@@ -91,8 +98,9 @@ const Story = () => {
             </h2>
             <p className="text-lg text-black max-w-2xl mx-auto">
               {/* CUSTOMIZE: Replace with your engagement photos description */}
-              A glimpse into our engagement photo session, capturing the joy and excitement 
-              of this special chapter in our lives.
+              Here are a few photos of the actual moment where Ethan proposed to Marlena, which
+              capture the beatiful moment shared together that marked the next step on our
+              journey together through life.
             </p>
           </div>
           
@@ -103,7 +111,32 @@ const Story = () => {
             {Array.from({ length: 6 }).map((_, index) => (
               <div key={index} className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-yellow">
                 <img 
-                  src={`https://images.unsplash.com/photo-${1519741497674 + index}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`}
+                  src={Proposal1}
+                  alt={`Engagement photo ${index + 1}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+                 <img 
+                  src={Proposal2}
+                  alt={`Engagement photo ${index + 1}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+                 <img 
+                  src={Proposal3}
+                  alt={`Engagement photo ${index + 1}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+                 <img 
+                  src={Proposal4}
+                  alt={`Engagement photo ${index + 1}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+                 <img 
+                  src={Proposal5}
+                  alt={`Engagement photo ${index + 1}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+                 <img 
+                  src={Proposal6}
                   alt={`Engagement photo ${index + 1}`}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />

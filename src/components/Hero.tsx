@@ -24,7 +24,7 @@ const Hero = () => {
           </h1>
           <p className="text-xl md:text-2xl font-light mb-8 opacity-90">
             {/* CUSTOMIZE: Replace with your wedding tagline */}
-            All friends and family, we invite you to celebrate with us on our big day!
+            To all of our friends and family, we invite you to celebrate with us on our big day!
           </p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
