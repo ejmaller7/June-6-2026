@@ -1,76 +1,146 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { supabase } from '@/integrations/supabase/client';
 import Navbar from '../components/Navbar';
-import { ExternalLink, Check } from 'lucide-react';
+import RegistryAdmin from '../components/RegistryAdmin';
+import { ExternalLink, Check, Plus } from 'lucide-react';
+import { toast } from '@/components/ui/use-toast';
 
 interface RegistryItem {
   id: string;
   name: string;
   price: number;
-  image: string;
-  store: string;
-  storeUrl: string;
+  image_url: string;
+  store_name: string;
+  store_url: string;
+  registry_url: string;
   quantity: number;
   purchased: number;
   description: string;
+  category: string;
 }
 
-interface Store {
+interface RegistryStore {
+  id: string;
   name: string;
-  url: string;
-  logo: string;
+  logo_url: string;
+  base_url: string;
+  registry_url: string;
+  is_active: boolean;
 }
 
 const Registry = () => {
-  // CUSTOMIZE: Add your desired registry stores here
-  // Format: { name: "Store Name", url: "https://store-website.com", logo: "path-to-logo-image" }
-  const [stores] = useState<Store[]>([
-    // Amazon Wedding Registry
-    { 
-      name: "Amazon Wedding Registry", 
-      url: "https://www.amazon.com/wedding/home", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/320px-Amazon_logo.svg.png" 
+  // Fetch registry stores from Supabase
+  const { data: stores = [], isLoading: storesLoading } = useQuery({
+    queryKey: ['registry-stores'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('registry_stores')
+        .select('*')
+        .eq('is_active', true)
+        .order('name');
+      
+      if (error) {
+        console.error('Error fetching stores:', error);
+        return [];
+      }
+      return data as RegistryStore[];
     },
-    
-    // Sur La Table
-    { 
-      name: "Sur La Table", 
-      url: "https://www.surlatable.com/registry/", 
-      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Sur_La_Table_logo.svg/320px-Sur_La_Table_logo.svg.png" 
-    },
-    
-    // Crate & Barrel
-    { 
-      name: "Crate & Barrel", 
-      url: "https://www.crateandbarrel.com/gift-registry/", 
-      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/Crate_%26_Barrel_logo.svg/320px-Crate_%26_Barrel_logo.svg.png" 
-    },
-    
-    // CUSTOMIZE: Add more stores as needed following the same format
-  ]);
+  });
 
-  // CUSTOMIZE: Add your registry items here
-  // Format follows the RegistryItem interface above
-  const [registryItems] = useState<RegistryItem[]>([
-    // Example item - CUSTOMIZE or remove
-    // {
-    //   id: '1',
-    //   name: "KitchenAid Stand Mixer",
-    //   price: 349.99,
-    //   image: "/images/kitchenaid-mixer.jpg",
-    //   store: "Amazon",
-    //   storeUrl: "https://www.amazon.com/product-link",
-    //   quantity: 1,
-    //   purchased: 0,
-    //   description: "Professional 5-quart mixer in Matte White",
-    // },
-    
-    // CUSTOMIZE: Add more items following the same format
-    // Each item needs: id, name, price, image, store, storeUrl, quantity, purchased, description
-  ]);
+  // Fetch registry items from Supabase
+  const { data: registryItems = [], isLoading: itemsLoading, refetch } = useQuery({
+    queryKey: ['registry-items'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('registry_items')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      if (error) {
+        console.error('Error fetching registry items:', error);
+        return [];
+      }
+      return data as RegistryItem[];
+    },
+  });
+
+  // Set up real-time subscriptions for live updates
+  useEffect(() => {
+    const itemsChannel = supabase
+      .channel('registry-items-changes')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'registry_items'
+        },
+        () => {
+          console.log('Registry items updated');
+          refetch();
+        }
+      )
+      .subscribe();
+
+    const purchasesChannel = supabase
+      .channel('registry-purchases-changes')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'registry_purchases'
+        },
+        (payload) => {
+          console.log('New purchase recorded:', payload);
+          refetch();
+          toast({
+            title: "Item Purchased! 🎉",
+            description: "Someone just purchased an item from your registry!",
+          });
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(itemsChannel);
+      supabase.removeChannel(purchasesChannel);
+    };
+  }, [refetch]);
 
   const isPurchased = (item: RegistryItem) => item.purchased >= item.quantity;
   const isPartiallyPurchased = (item: RegistryItem) => item.purchased > 0 && item.purchased < item.quantity;
+
+  const handleStoreClick = (store: RegistryStore) => {
+    if (store.registry_url === 'YOUR_AMAZON_REGISTRY_URL_HERE' || 
+        store.registry_url === 'YOUR_SUR_LA_TABLE_REGISTRY_URL_HERE' || 
+        store.registry_url === 'YOUR_CRATE_AND_BARREL_REGISTRY_URL_HERE') {
+      toast({
+        title: "Registry URL Not Set",
+        description: `Please update the registry URL for ${store.name} in your database.`,
+        variant: "destructive",
+      });
+      return;
+    }
+    window.open(store.registry_url, '_blank');
+  };
+
+  if (storesLoading || itemsLoading) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <div className="pt-24 pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl md:text-6xl font-serif text-black mb-6">
+              Wedding Registry
+            </h1>
+            <p className="text-xl text-black">Loading your registry...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -83,7 +153,6 @@ const Registry = () => {
             Wedding Registry
           </h1>
           <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed mb-8">
-            {/* CUSTOMIZE: Replace with your registry introduction */}
             Your presence at our wedding is the greatest gift of all. If you wish to honor us 
             with a gift, we've curated a selection of items that will help us build our new home together.
           </p>
@@ -99,22 +168,20 @@ const Registry = () => {
           {stores.length === 0 ? (
             <div className="text-center py-10">
               <p className="text-xl text-black">
-                No stores have been added yet. Please add your registry stores in the Registry.tsx file.
+                No stores have been added yet. Registry stores are loading...
               </p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {stores.map((store, index) => (
-                <a
-                  key={index}
-                  href={store.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+              {stores.map((store) => (
+                <button
+                  key={store.id}
+                  onClick={() => handleStoreClick(store)}
                   className="group bg-white border border-pale-yellow rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden bg-gray-50 flex items-center justify-center">
                     <img 
-                      src={store.logo} 
+                      src={store.logo_url || ''} 
                       alt={store.name}
                       className="max-w-16 max-h-16 object-contain group-hover:scale-105 transition-transform duration-300"
                     />
@@ -128,7 +195,7 @@ const Registry = () => {
                     </span>
                     <ExternalLink className="w-4 h-4 text-black group-hover:text-pale-blue transition-colors" />
                   </div>
-                </a>
+                </button>
               ))}
             </div>
           )}
@@ -163,7 +230,7 @@ const Registry = () => {
                 >
                   <div className="relative">
                     <img 
-                      src={item.image} 
+                      src={item.image_url || '/placeholder.svg'} 
                       alt={item.name}
                       className="w-full h-64 object-cover"
                     />
@@ -187,7 +254,7 @@ const Registry = () => {
                     
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-2xl font-bold text-black">
-                        ${item.price.toFixed(2)}
+                        ${Number(item.price).toFixed(2)}
                       </span>
                       <span className="text-sm text-black">
                         Qty: {item.quantity}
@@ -196,7 +263,7 @@ const Registry = () => {
                     
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-black font-medium">
-                        {item.store}
+                        {item.store_name}
                       </span>
                       {isPurchased(item) ? (
                         <span className="bg-pale-yellow text-black px-3 py-1 rounded-full text-sm font-medium">
@@ -204,7 +271,7 @@ const Registry = () => {
                         </span>
                       ) : (
                         <a
-                          href={item.storeUrl}
+                          href={item.registry_url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-pale-yellow hover:bg-white border border-pale-yellow text-black px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 flex items-center gap-2"
@@ -235,11 +302,11 @@ const Registry = () => {
                 <ol className="space-y-3 text-black">
                   <li className="flex items-start">
                     <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">1</span>
-                    <span>Click on any store above to visit their website</span>
+                    <span>Click on any store above to visit our specific registry</span>
                   </li>
                   <li className="flex items-start">
                     <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">2</span>
-                    <span>Search for our registry or browse items</span>
+                    <span>Browse items or click "Purchase" on specific items below</span>
                   </li>
                   <li className="flex items-start">
                     <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">3</span>
@@ -247,7 +314,7 @@ const Registry = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">4</span>
-                    <span>Items will be shipped to us automatically</span>
+                    <span>Items automatically update here when purchased!</span>
                   </li>
                 </ol>
               </div>
@@ -256,11 +323,11 @@ const Registry = () => {
                 <ul className="space-y-3 text-black">
                   <li className="flex items-start">
                     <span className="text-pale-blue mr-2">•</span>
-                    <span>No duplicate gifts - items are marked as purchased</span>
+                    <span>Real-time updates - see what's been purchased instantly</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-pale-blue mr-2">•</span>
-                    <span>Easy returns and exchanges through each store</span>
+                    <span>Direct links to our specific registries</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-pale-blue mr-2">•</span>
@@ -279,13 +346,15 @@ const Registry = () => {
             Thank You
           </h2>
           <p className="text-lg text-black leading-relaxed">
-            {/* CUSTOMIZE: Replace with your thank you message */}
             Your love, support, and presence mean the world to us. Any gift you choose to give 
             will be cherished as we start this new chapter of our lives together. We're grateful 
             for each and every one of you who will be celebrating with us on our special day.
           </p>
         </div>
       </div>
+
+      {/* Add the admin component at the bottom */}
+      <RegistryAdmin />
     </div>
   );
 };

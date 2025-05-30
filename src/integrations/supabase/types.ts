@@ -9,7 +9,122 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      registry_items: {
+        Row: {
+          category: string | null
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string | null
+          name: string
+          price: number
+          purchased: number
+          quantity: number
+          registry_url: string
+          store_name: string
+          store_url: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          name: string
+          price: number
+          purchased?: number
+          quantity?: number
+          registry_url: string
+          store_name: string
+          store_url: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          name?: string
+          price?: number
+          purchased?: number
+          quantity?: number
+          registry_url?: string
+          store_name?: string
+          store_url?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      registry_purchases: {
+        Row: {
+          id: string
+          notes: string | null
+          purchase_date: string
+          purchaser_email: string | null
+          purchaser_name: string | null
+          quantity: number
+          registry_item_id: string | null
+        }
+        Insert: {
+          id?: string
+          notes?: string | null
+          purchase_date?: string
+          purchaser_email?: string | null
+          purchaser_name?: string | null
+          quantity?: number
+          registry_item_id?: string | null
+        }
+        Update: {
+          id?: string
+          notes?: string | null
+          purchase_date?: string
+          purchaser_email?: string | null
+          purchaser_name?: string | null
+          quantity?: number
+          registry_item_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "registry_purchases_registry_item_id_fkey"
+            columns: ["registry_item_id"]
+            isOneToOne: false
+            referencedRelation: "registry_items"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      registry_stores: {
+        Row: {
+          base_url: string
+          created_at: string
+          id: string
+          is_active: boolean
+          logo_url: string | null
+          name: string
+          registry_url: string
+        }
+        Insert: {
+          base_url: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          logo_url?: string | null
+          name: string
+          registry_url: string
+        }
+        Update: {
+          base_url?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          logo_url?: string | null
+          name?: string
+          registry_url?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
