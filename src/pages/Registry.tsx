@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import Navbar from '../components/Navbar';
 import RegistryAdmin from '../components/RegistryAdmin';
+import RegistryFilters from '../components/RegistryFilters';
+import RegistryItemCard from '../components/RegistryItemCard';
 import { ExternalLink, Check, Plus } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 
@@ -30,6 +32,12 @@ interface RegistryStore {
 }
 
 const Registry = () => {
+  // Filter states
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 999999]);
+  const [purchaseStatus, setPurchaseStatus] = useState('all');
+  const [category, setCategory] = useState('all');
+  const [sortBy, setSortBy] = useState('newest');
+
   // Fetch registry stores from Supabase
   const { data: stores = [], isLoading: storesLoading } = useQuery({
     queryKey: ['registry-stores'],
@@ -108,6 +116,50 @@ const Registry = () => {
       supabase.removeChannel(purchasesChannel);
     };
   }, [refetch]);
+
+  // Get unique categories for filtering
+  const categories = useMemo(() => {
+    const cats = registryItems
+      .map(item => item.category)
+      .filter(Boolean)
+      .filter((cat, index, arr) => arr.indexOf(cat) === index);
+    return cats;
+  }, [registryItems]);
+
+  // Filter and sort items
+  const filteredAndSortedItems = useMemo(() => {
+    let filtered = registryItems.filter(item => {
+      // Price filter
+      if (item.price < priceRange[0] || item.price > priceRange[1]) return false;
+      
+      // Purchase status filter
+      if (purchaseStatus === 'available' && item.purchased >= item.quantity) return false;
+      if (purchaseStatus === 'purchased' && item.purchased < item.quantity) return false;
+      if (purchaseStatus === 'partial' && (item.purchased === 0 || item.purchased >= item.quantity)) return false;
+      
+      // Category filter
+      if (category !== 'all' && item.category !== category) return false;
+      
+      return true;
+    });
+
+    // Sort items
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'name':
+          return a.name.localeCompare(b.name);
+        case 'price-low':
+          return a.price - b.price;
+        case 'price-high':
+          return b.price - a.price;
+        case 'newest':
+        default:
+          return new Date(b.created_at || '').getTime() - new Date(a.created_at || '').getTime();
+      }
+    });
+
+    return filtered;
+  }, [registryItems, priceRange, purchaseStatus, category, sortBy]);
 
   const isPurchased = (item: RegistryItem) => item.purchased >= item.quantity;
   const isPartiallyPurchased = (item: RegistryItem) => item.purchased > 0 && item.purchased < item.quantity;
@@ -208,6 +260,7 @@ const Registry = () => {
           <h2 className="text-3xl font-serif text-center text-black mb-12">
             Our Wish List
           </h2>
+          
           {registryItems.length === 0 ? (
             <div className="text-center py-20">
               <div className="max-w-2xl mx-auto">
@@ -220,71 +273,42 @@ const Registry = () => {
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {registryItems.map((item) => (
-                <div
-                  key={item.id}
-                  className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-pale-yellow ${
-                    isPurchased(item) ? 'opacity-75' : ''
-                  }`}
-                >
-                  <div className="relative">
-                    <img 
-                      src={item.image_url || '/placeholder.svg'} 
-                      alt={item.name}
-                      className="w-full h-64 object-cover"
-                    />
-                    {isPurchased(item) && (
-                      <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                        <div className="bg-white rounded-full p-3">
-                          <Check className="w-8 h-8 text-pale-blue" />
-                        </div>
-                      </div>
-                    )}
-                    {isPartiallyPurchased(item) && !isPurchased(item) && (
-                      <div className="absolute top-4 right-4 bg-pale-yellow text-black px-2 py-1 rounded-full text-sm font-medium">
-                        {item.purchased}/{item.quantity} purchased
-                      </div>
-                    )}
-                  </div>
-                  
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-black mb-2">{item.name}</h3>
-                    <p className="text-black text-sm mb-3">{item.description}</p>
-                    
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-2xl font-bold text-black">
-                        ${Number(item.price).toFixed(2)}
-                      </span>
-                      <span className="text-sm text-black">
-                        Qty: {item.quantity}
-                      </span>
-                    </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-black font-medium">
-                        {item.store_name}
-                      </span>
-                      {isPurchased(item) ? (
-                        <span className="bg-pale-yellow text-black px-3 py-1 rounded-full text-sm font-medium">
-                          Purchased ✓
-                        </span>
-                      ) : (
-                        <a
-                          href={item.registry_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-pale-yellow hover:bg-white border border-pale-yellow text-black px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 flex items-center gap-2"
-                        >
-                          Purchase
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
+            <>
+              {/* Filters */}
+              <RegistryFilters
+                priceRange={priceRange}
+                setPriceRange={setPriceRange}
+                purchaseStatus={purchaseStatus}
+                setPurchaseStatus={setPurchaseStatus}
+                category={category}
+                setCategory={setCategory}
+                sortBy={sortBy}
+                setSortBy={setSortBy}
+                categories={categories}
+              />
+
+              {/* Results Summary */}
+              <div className="mb-6">
+                <p className="text-lg text-black">
+                  Showing <strong>{filteredAndSortedItems.length}</strong> of <strong>{registryItems.length}</strong> items
+                </p>
+              </div>
+
+              {/* Items Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {filteredAndSortedItems.map((item) => (
+                  <RegistryItemCard key={item.id} item={item} />
+                ))}
+              </div>
+
+              {filteredAndSortedItems.length === 0 && (
+                <div className="text-center py-10">
+                  <p className="text-xl text-black">
+                    No items match your current filters. Try adjusting your search criteria.
+                  </p>
                 </div>
-              ))}
-            </div>
+              )}
+            </>
           )}
         </div>
       </div>
@@ -306,7 +330,7 @@ const Registry = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">2</span>
-                    <span>Browse items or click "Purchase" on specific items below</span>
+                    <span>Browse items or click "Add to Cart" on specific items below</span>
                   </li>
                   <li className="flex items-start">
                     <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">3</span>
