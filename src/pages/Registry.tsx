@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
@@ -20,6 +21,7 @@ interface RegistryItem {
   purchased: number;
   description: string;
   category: string;
+  created_at: string;
 }
 
 interface RegistryStore {
@@ -154,7 +156,7 @@ const Registry = () => {
           return b.price - a.price;
         case 'newest':
         default:
-          return new Date(b.created_at || '').getTime() - new Date(a.created_at || '').getTime();
+          return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
       }
     });
 
