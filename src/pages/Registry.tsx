@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
@@ -214,7 +213,7 @@ const Registry = () => {
       </div>
 
       {/* Registry Stores */}
-      <div className="py-16 bg-pale-yellow">
+      <div className="py-16 bg-butter-yellow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-serif text-center text-black mb-12">
             Where We're Registered
@@ -231,7 +230,7 @@ const Registry = () => {
                 <button
                   key={store.id}
                   onClick={() => handleStoreClick(store)}
-                  className="group bg-white border border-pale-yellow rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="group bg-white border border-butter-yellow rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden bg-gray-50 flex items-center justify-center">
                     <img 
@@ -316,30 +315,29 @@ const Registry = () => {
       </div>
 
       {/* How Registry Works */}
-      <div className="py-16 bg-pale-yellow">
+      <div className="py-16 bg-butter-yellow">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-serif text-black mb-6">
             How Our Registry Works
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-8 text-left mb-12 border border-pale-yellow">
+          <div className="bg-white rounded-xl shadow-lg p-8 text-left mb-12 border border-butter-yellow">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-xl font-semibold text-black mb-4">For Gift Givers:</h3>
                 <ol className="space-y-3 text-black">
                   <li className="flex items-start">
-                    <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">1</span>
+                    <span className="bg-butter-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">1</span>
                     <span>Click on any store above to visit our specific registry</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">2</span>
+                    <span className="bg-butter-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">2</span>
                     <span>Browse items or click "Add to Cart" on specific items below</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">3</span>
-                    <span>Purchase directly through the store</span>
+                    <span className="bg-butter-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">3</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-pale-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">4</span>
+                    <span className="bg-butter-yellow rounded-full w-6 h-6 flex items-center justify-center text-black font-medium mr-3 flex-shrink-0 text-sm">4</span>
                     <span>Items automatically update here when purchased!</span>
                   </li>
                 </ol>

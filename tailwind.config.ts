@@ -21,8 +21,9 @@ export default {
 		extend: {
 			colors: {
 				// Define our custom colors
-				'pale-yellow': '#FFF8DC', // Pale yellow for secondary elements
+				'butter-yellow': '#FFE135', // Butter yellow for secondary elements
 				'pale-blue': '#E6F2FF', // Pale blue for accent elements
+				'sage-green': '#9CAF88', // Sage green for accents
 				
 				// Original color definitions
 				border: 'hsl(var(--border))',

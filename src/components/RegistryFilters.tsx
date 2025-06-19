@@ -29,7 +29,7 @@ const RegistryFilters = ({
   categories
 }: RegistryFiltersProps) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border border-pale-yellow">
+    <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border border-butter-yellow">
       <div className="flex items-center gap-2 mb-4">
         <SlidersHorizontal className="w-5 h-5 text-black" />
         <h3 className="text-lg font-semibold text-black">Filter & Sort</h3>
@@ -115,7 +115,7 @@ const RegistryFilters = ({
               setCategory('all');
               setSortBy('newest');
             }}
-            className="w-full border-black text-black hover:bg-pale-yellow"
+            className="w-full border-black text-black hover:bg-butter-yellow"
           >
             <Filter className="w-4 h-4 mr-2" />
             Clear Filters

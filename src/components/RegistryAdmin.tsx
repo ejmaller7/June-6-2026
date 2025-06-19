@@ -95,7 +95,7 @@ const RegistryAdmin = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(true)}
-          className="bg-pale-yellow hover:bg-white border border-black text-black rounded-full p-4 shadow-lg"
+          className="bg-butter-yellow hover:bg-white border border-black text-black rounded-full p-4 shadow-lg"
         >
           <Plus className="w-6 h-6" />
         </Button>
@@ -206,7 +206,7 @@ const RegistryAdmin = () => {
             <Button
               type="submit"
               disabled={isLoading}
-              className="flex-1 bg-pale-yellow hover:bg-white border border-black text-black"
+              className="flex-1 bg-butter-yellow hover:bg-white border border-black text-black"
             >
               <Save className="w-4 h-4 mr-2" />
               {isLoading ? 'Adding...' : 'Add Item'}

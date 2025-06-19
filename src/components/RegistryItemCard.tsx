@@ -27,7 +27,7 @@ const RegistryItemCard = ({ item }: RegistryItemCardProps) => {
   const remainingQuantity = item.quantity - item.purchased;
 
   return (
-    <div className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-pale-yellow group ${
+    <div className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-butter-yellow group ${
       isPurchased ? 'opacity-75' : ''
     }`}>
       {/* Image Section */}
@@ -108,7 +108,7 @@ const RegistryItemCard = ({ item }: RegistryItemCardProps) => {
         {/* Category */}
         {item.category && (
           <div className="mb-4">
-            <span className="inline-block bg-pale-yellow text-black px-3 py-1 rounded-full text-xs font-medium">
+            <span className="inline-block bg-butter-yellow text-black px-3 py-1 rounded-full text-xs font-medium">
               {item.category}
             </span>
           </div>
