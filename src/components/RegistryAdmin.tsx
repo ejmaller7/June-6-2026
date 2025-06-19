@@ -1,10 +1,10 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/components/ui/use-toast';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Plus, Save } from 'lucide-react';
+import { Plus, Save, Settings, LogOut } from 'lucide-react';
+import AdminLogin from './AdminLogin';
 
 interface RegistryItemForm {
   name: string;
@@ -21,6 +21,8 @@ interface RegistryItemForm {
 const RegistryAdmin = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   const [formData, setFormData] = useState<RegistryItemForm>({
     name: '',
     description: '',
@@ -32,6 +34,12 @@ const RegistryAdmin = () => {
     quantity: '1',
     category: '',
   });
+
+  // Check if user is already logged in
+  useEffect(() => {
+    const adminStatus = localStorage.getItem('registryAdmin');
+    setIsLoggedIn(adminStatus === 'true');
+  }, []);
 
   const handleInputChange = (field: keyof RegistryItemForm, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -90,12 +98,59 @@ const RegistryAdmin = () => {
     }
   };
 
-  if (!isOpen) {
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    setShowLogin(false);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('registryAdmin');
+    setIsLoggedIn(false);
+    setIsOpen(false);
+  };
+
+  const handleAdminClick = () => {
+    if (isLoggedIn) {
+      setIsOpen(true);
+    } else {
+      setShowLogin(true);
+    }
+  };
+
+  // Don't show anything if not logged in and not showing login
+  if (!isLoggedIn && !showLogin) {
     return (
       <div className="fixed bottom-6 right-6 z-50">
         <Button
+          onClick={handleAdminClick}
+          className="bg-sage-green hover:bg-sage-green/80 text-white rounded-full p-3 shadow-lg opacity-30 hover:opacity-100 transition-opacity"
+          title="Admin Access"
+        >
+          <Settings className="w-5 h-5" />
+        </Button>
+      </div>
+    );
+  }
+
+  // Show login modal
+  if (showLogin && !isLoggedIn) {
+    return <AdminLogin onLogin={handleLogin} />;
+  }
+
+  // Show admin interface for logged in users
+  if (!isOpen) {
+    return (
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2">
+        <Button
+          onClick={handleLogout}
+          className="bg-red-500 hover:bg-red-600 text-white rounded-full p-3 shadow-lg"
+          title="Logout"
+        >
+          <LogOut className="w-4 h-4" />
+        </Button>
+        <Button
           onClick={() => setIsOpen(true)}
-          className="bg-butter-yellow hover:bg-white border border-black text-black rounded-full p-4 shadow-lg"
+          className="bg-pale-yellow hover:bg-white border border-black text-black rounded-full p-4 shadow-lg"
         >
           <Plus className="w-6 h-6" />
         </Button>
@@ -206,7 +261,7 @@ const RegistryAdmin = () => {
             <Button
               type="submit"
               disabled={isLoading}
-              className="flex-1 bg-butter-yellow hover:bg-white border border-black text-black"
+              className="flex-1 bg-pale-yellow hover:bg-white border border-black text-black"
             >
               <Save className="w-4 h-4 mr-2" />
               {isLoading ? 'Adding...' : 'Add Item'}
