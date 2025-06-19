@@ -19,7 +19,7 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-butter-yellow">
+    <nav className="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-pale-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -62,7 +62,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-butter-yellow">
+          <div className="md:hidden py-4 border-t border-pale-yellow">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link

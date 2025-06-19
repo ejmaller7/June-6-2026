@@ -36,11 +36,23 @@ const Story = () => {
   const engagementPhotos = [Proposal1, Proposal2, Proposal3, Proposal4, Proposal5, Proposal6];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Subtle wildflower background */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div 
+          className="w-full h-full bg-repeat" 
+          style={{
+            backgroundImage: `url("https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=200&h=200&fit=crop&crop=center")`,
+            backgroundSize: '150px 150px',
+            backgroundPosition: '0 0, 75px 75px'
+          }}
+        ></div>
+      </div>
+      
       <Navbar />
       
       {/* Hero Section */}
-      <div className="pt-24 pb-16">
+      <div className="pt-24 pb-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-serif text-black mb-6">
             Our Story
@@ -55,7 +67,7 @@ const Story = () => {
       </div>
 
       {/* Timeline */}
-      <div className="py-16">
+      <div className="py-16 relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
             {/* Timeline line */}
@@ -65,7 +77,7 @@ const Story = () => {
               <div key={index} className={`relative flex items-center mb-16 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 {/* Content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-8 pl-12' : 'md:pl-8 pl-12'}`}>
-                  <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-pale-yellow">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-pale-yellow">
                     <div className="text-blue-400 font-bold text-lg mb-2">{event.year}</div>
                     <h3 className="text-2xl font-serif text-black mb-4">{event.title}</h3>
                     <p className="text-black leading-relaxed text-lg">{event.description}</p>
@@ -78,7 +90,7 @@ const Story = () => {
       </div>
 
       {/* Engagement Photos Section */}
-      <div className="py-16 bg-pale-yellow">
+      <div className="py-16 bg-pale-yellow/50 backdrop-blur-sm relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-black mb-4">
